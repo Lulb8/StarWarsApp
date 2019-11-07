@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#202020</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FFEB3B</color>
+    <color name="row_background">#3D3D3D</color>
+    <color name="main_background">#202020</color>
+    <color name="textView_background">#202020</color>
+    <color name="background_activityMain2">#202020</color>
+    <color name="colorAccent_activityMain2">#FFEB3B</color>
+
 </resources>

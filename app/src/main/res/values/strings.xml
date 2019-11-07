@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">StarWarsApp</string>
+    <string name="app_name">Star Wars</string>
+    <string name="birth_year">birth_year</string>
+    <string name="homeworld">homeworld</string>
+    <string name="gender">gender</string>
+    <string name="starships">starships</string>
+    <string name="films">films</string>
+    <string name="url">url</string>
+    <string name="name">name</string>
+    <string name="hair_color">hair_color</string>
+    <string name="skin_color">skin-color</string>
+    <string name="eye_color">eye_color</string>
+    <string name="height">height</string>
+    <string name="mass">mass</string>
+    <string name="linkUrl">linkUrl</string>
+    <string name="imageIcon">imageIcon</string>
+    <string name="character_name">Character Name</string>
+
+    <string name="bottom_navigation_menu_favorites">Favorites</string>
+    <string name="bottom_navigation_menu_people">People</string>
+    <string name="bottom_navigation_menu_search">Search</string>
+    <string name="darth_vader">Darth Vader</string>
+    <string name="image_detail">Image Detail</string>
 </resources>
