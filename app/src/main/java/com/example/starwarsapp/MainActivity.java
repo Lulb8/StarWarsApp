@@ -3,13 +3,19 @@ package com.example.starwarsapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.starwarsapp.model.People;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,6 +73,32 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
+    public void showList(List<People> input){
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        mAdapter = new ItemAdapter(input, getListener(), this);
+        recyclerView.setAdapter(mAdapter);
+    }
+
+    private ItemAdapter.OnItemClickListener getListener() {
+        return new ItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(People people) {
+                Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                Gson gson = new Gson();
+                String json = gson.toJson(people);
+                intent.putExtra(NAME, json);
+                startActivity(intent);
+
+                final MediaPlayer soundNext = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_next);
+                soundNext.start();
+
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        };
+    }
 
     @Override
     public void finish() {

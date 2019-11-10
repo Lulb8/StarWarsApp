@@ -26,19 +26,19 @@ public class People {
         this.name = name;
     }
 
-    public String getImage_icon() {
+    public String getImageIcon() {
         return image_icon;
     }
 
-    public void setImage_icon(String image_icon) {
+    public void setImageIcon(String image_icon) {
         this.image_icon = image_icon;
     }
 
-    public String getImage_detail() {
+    public String getImageDetail() {
         return image_detail;
     }
 
-    public void setImage_detail(String image_detail) {
+    public void setImageDetail(String image_detail) {
         this.image_detail = image_detail;
     }
 
@@ -58,35 +58,35 @@ public class People {
         this.mass = mass;
     }
 
-    public String getHair_color() {
+    public String getHairColor() {
         return hair_color;
     }
 
-    public void setHair_color(String hair_color) {
+    public void setHairColor(String hair_color) {
         this.hair_color = hair_color;
     }
 
-    public String getSkin_color() {
+    public String getSkinColor() {
         return skin_color;
     }
 
-    public void setSkin_color(String skin_color) {
+    public void setSkinColor(String skin_color) {
         this.skin_color = skin_color;
     }
 
-    public String getEye_color() {
+    public String getEyeColor() {
         return eye_color;
     }
 
-    public void setEye_color(String eye_color) {
+    public void setEyeColor(String eye_color) {
         this.eye_color = eye_color;
     }
 
-    public String getBirth_year() {
+    public String getBirthYear() {
         return birth_year;
     }
 
-    public void setBirth_year(String birth_year) {
+    public void setBirthYear(String birth_year) {
         this.birth_year = birth_year;
     }
 

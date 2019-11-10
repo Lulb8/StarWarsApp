@@ -48,7 +48,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
     @Override
     public CelluleJava onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.row_people, parent, false);
+        View v = inflater.inflate(R.layout.fragment_list, parent, false);
         CelluleJava vh = new CelluleJava(v);
         return vh;
     }
@@ -58,7 +58,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
         final People people = listValues.get(position);
         final String name = listValues.get(position).getName();
         final String gender = listValues.get(position).getGender();
-        final String image_icon = listValues.get(position).getImage_icon();
+        final String image_icon = listValues.get(position).getImageIcon();
         System.out.println("url = " + image_icon);
 
         holder.txtHeader.setText(name);

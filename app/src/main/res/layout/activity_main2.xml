@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/background_activityMain2"
+android:orientation="vertical"
+tools:context=".Main2Activity">
+
+<TextView
+    android:id="@+id/name"
+    android:layout_width="300sp"
+    android:layout_height="50sp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginEnd="8dp"
+    android:background="@color/textView_background"
+    android:fontFamily="@font/starwars"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/name"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="25sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/birth_year"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="45dp"
+    android:layout_marginEnd="8dp"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/birth_year"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="@+id/name"
+    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+<TextView
+    android:id="@+id/eye_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/eye_color"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="@+id/name"
+    app:layout_constraintStart_toStartOf="@+id/name"
+    app:layout_constraintTop_toBottomOf="@+id/height" />
+
+<TextView
+    android:id="@+id/gender"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginTop="45dp"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/gender"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="18sp"
+    app:layout_constraintStart_toStartOf="@+id/name"
+    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+<TextView
+    android:id="@+id/mass"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/mass"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="@+id/gender"
+    app:layout_constraintStart_toStartOf="@+id/gender"
+    app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+<TextView
+    android:id="@+id/height"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/height"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="@+id/birth_year"
+    app:layout_constraintStart_toStartOf="@+id/birth_year"
+    app:layout_constraintTop_toBottomOf="@+id/birth_year" />
+
+<TextView
+    android:id="@+id/hair_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/hair_color"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="@+id/eye_color"
+    app:layout_constraintStart_toStartOf="@+id/eye_color"
+    app:layout_constraintTop_toBottomOf="@+id/eye_color" />
+
+
+<TextView
+    android:id="@+id/skin_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/skin_color"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="@+id/hair_color"
+    app:layout_constraintStart_toStartOf="@+id/hair_color"
+    app:layout_constraintTop_toBottomOf="@+id/hair_color" />
+
+<TextView
+    android:id="@+id/linkUrl"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:autoLink="web"
+    android:background="@color/textView_background"
+    android:gravity="center_vertical|center_horizontal"
+    android:text="@string/linkUrl"
+    android:textAlignment="center"
+    android:textColor="@color/colorAccent_activityMain2"
+    android:textSize="12sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/skin_color"
+    app:layout_constraintStart_toStartOf="@+id/skin_color" />
+
+<ImageView
+    android:id="@+id/darth_vader"
+    android:layout_width="300sp"
+    android:layout_height="300sp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
