@@ -19,9 +19,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
+    //private RecyclerView recyclerView;
+    //private RecyclerView.Adapter mAdapter;
+    //private RecyclerView.LayoutManager layoutManager;
     // private MainController controller;
 
     private static final String NAME = "showTextView";
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
-
+/*
     public void showList(List<People> input){
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
-
+*/
     @Override
     public void finish() {
         super.finish();

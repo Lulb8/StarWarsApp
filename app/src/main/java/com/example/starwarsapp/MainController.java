@@ -21,7 +21,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
-    private MainActivity activity;
+    //private MainActivity activity;
+    private ListFragment listFragment;
     private RestPeopleApi restPeopleApi;
 
     private final String OBJECT = "OBJECT";
@@ -30,8 +31,8 @@ public class MainController {
 
     static final String BASE_URL = "https://raw.githubusercontent.com/Lulb8/Apis/master/SWAPI/";
 
-    public MainController(MainActivity mainActivity, SharedPreferences sharedPreferences) {
-        this.activity = mainActivity;
+    public MainController(ListFragment listFragment, SharedPreferences sharedPreferences) {
+        this.listFragment = listFragment;
         this.sharedPreferences = sharedPreferences;
     }
 
@@ -49,7 +50,7 @@ public class MainController {
 
         if (hasDataInDataBase()) {
             List<People> peopleList = getListFromDataBase();
-            activity.showList(peopleList);
+            listFragment.showList(peopleList);
         } else {
             makeApiCall();
         }
@@ -64,7 +65,7 @@ public class MainController {
                 List<People> listPeople = restPeopleResponse.getResults();
                 storeData(listPeople);
 
-                activity.showList(listPeople);
+                listFragment.showList(listPeople);
             }
 
             @Override
