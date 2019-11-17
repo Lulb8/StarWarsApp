@@ -1,4 +1,4 @@
-package com.example.starwarsapp;
+package com.example.starwarsapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.starwarsapp.R;
 import com.example.starwarsapp.model.People;
 import com.google.gson.Gson;
 

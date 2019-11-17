@@ -7,7 +7,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@color/background_activityMain2"
 android:orientation="vertical"
-tools:context=".Main2Activity">
+tools:context=".view.Main2Activity">
 
 <TextView
     android:id="@+id/name"

@@ -1,4 +1,4 @@
-package com.example.starwarsapp;
+package com.example.starwarsapp.view;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -6,20 +6,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.starwarsapp.controller.MainController;
+import com.example.starwarsapp.R;
 import com.example.starwarsapp.model.People;
 import com.google.gson.Gson;
 
 import java.util.List;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class ListFragment extends Fragment {
 
@@ -48,15 +46,15 @@ public class ListFragment extends Fragment {
         //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         //recyclerView.setAdapter(itemAdapter);
 
-/*
-        RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
+
+        recyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getBaseContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
 
         ItemAdapter itemAdapter = new ItemAdapter(peopleList, getListener(), getActivity());
         recyclerView.setAdapter(itemAdapter);
-*/
+
 /*
         controller = new MainController(this, getActivity().getBaseContext().getSharedPreferences(PREFS,MODE_PRIVATE));
         controller.onStart();
@@ -74,16 +72,17 @@ public class ListFragment extends Fragment {
     }
 
 
-
+/*
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //recyclerView = findVi
+        recyclerView = (RecyclerView) v.findViewById(R.id.my_recycler_view);
 
         controller = new MainController(this, getActivity().getBaseContext().getSharedPreferences(PREFS,MODE_PRIVATE));
         controller.onStart();
     }
+ */
 
     private ItemAdapter.OnItemClickListener getListener() {
         return new ItemAdapter.OnItemClickListener() {

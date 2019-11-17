@@ -1,4 +1,4 @@
-package com.example.starwarsapp;
+package com.example.starwarsapp.controller;
 
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -6,6 +6,7 @@ import android.util.Log;
 import com.example.starwarsapp.model.People;
 import com.example.starwarsapp.model.RestPeopleApi;
 import com.example.starwarsapp.model.RestPeopleResponse;
+import com.example.starwarsapp.view.ListFragment;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;

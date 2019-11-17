@@ -1,4 +1,4 @@
-package com.example.starwarsapp;
+package com.example.starwarsapp.view;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.starwarsapp.R;
 import com.example.starwarsapp.model.People;
 
 import java.util.List;
@@ -48,7 +49,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
     @Override
     public CelluleJava onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.fragment_list, parent, false);
+        View v = inflater.inflate(R.layout.row_people, parent, false);
         CelluleJava vh = new CelluleJava(v);
         return vh;
     }
