@@ -17,7 +17,7 @@ import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
 
-    private List<People> listValues;
+    private List<People> peopleList;
     private final OnItemClickListener listener;
     private Context context;
 
@@ -41,7 +41,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
     }
 
     public ItemAdapter(List<People> listValues, OnItemClickListener listener, Context context) {
-        this.listValues = listValues;
+        this.peopleList = listValues;
         this.listener = listener;
         this.context = context;
     }
@@ -49,17 +49,17 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
     @Override
     public CelluleJava onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.row_people, parent, false);
+        View v = inflater.inflate(R.layout.fragment_main_item, parent, false);
         CelluleJava vh = new CelluleJava(v);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(CelluleJava holder, final int position) {
-        final People people = listValues.get(position);
-        final String name = listValues.get(position).getName();
-        final String gender = listValues.get(position).getGender();
-        final String image_icon = listValues.get(position).getImageIcon();
+        final People people = peopleList.get(position);
+        final String name = peopleList.get(position).getName();
+        final String gender = peopleList.get(position).getGender();
+        final String image_icon = peopleList.get(position).getImageIcon();
         System.out.println("url = " + image_icon);
 
         holder.txtHeader.setText(name);
@@ -90,6 +90,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
 
     @Override
     public int getItemCount() {
-        return listValues.size();
+        return peopleList.size();
     }
 }
