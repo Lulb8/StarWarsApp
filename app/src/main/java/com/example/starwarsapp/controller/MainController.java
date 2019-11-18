@@ -22,7 +22,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainController {
 
-    //private MainActivity activity;
     private ListFragment listFragment;
     private RestPeopleApi restPeopleApi;
 

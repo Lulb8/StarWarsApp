@@ -7,13 +7,12 @@ public interface RestPeopleApi {
 
     @GET("people.json")
     Call<RestPeopleResponse> getListPeople();
-
+/*
     @GET("films.json")
     Call<RestPeopleResponse> getListFilms();
 
     @GET("planets.json")
     Call<RestPeopleResponse> getListPlanets();
-
 
     @GET("species.json")
     Call<RestPeopleResponse> getListSpecies();
@@ -23,5 +22,5 @@ public interface RestPeopleApi {
 
     @GET("vehicles.json")
     Call<RestPeopleResponse> getListVehicles();
-
+*/
 }

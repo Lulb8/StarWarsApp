@@ -1,12 +1,12 @@
 package com.example.starwarsapp.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.starwarsapp.R;
 import com.example.starwarsapp.model.People;
@@ -58,33 +58,34 @@ public class Main2Activity extends AppCompatActivity {
 
         //shakePhone();
     }
-/*
-    public void shakePhone(){
-        // ShakeDetector initialization
-        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        mAccelerometer = mSensorManager
-                .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mShakeDetector = new ShakeDetector();
-        mShakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
 
-            @Override
-            public void onShake(int count) {
-                final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.imperial_march);
-                soundPrevious.start();
+    /*
+        public void shakePhone(){
+            // ShakeDetector initialization
+            mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+            mAccelerometer = mSensorManager
+                    .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+            mShakeDetector = new ShakeDetector();
+            mShakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
 
-                final ImageView darth_vader = findViewById(R.id.darth_vader);
-                darth_vader.animate().alpha(1f).setDuration(600);
-                darth_vader.setImageDrawable(getResources().getDrawable(R.drawable.darth_vader_icon));
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        darth_vader.animate().alpha(0f).setDuration(600);
-                    }
-                }, 9100);
-            }
-        });
-    }
-*/
+                @Override
+                public void onShake(int count) {
+                    final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.imperial_march);
+                    soundPrevious.start();
+
+                    final ImageView darth_vader = findViewById(R.id.darth_vader);
+                    darth_vader.animate().alpha(1f).setDuration(600);
+                    darth_vader.setImageDrawable(getResources().getDrawable(R.drawable.darth_vader_icon));
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            darth_vader.animate().alpha(0f).setDuration(600);
+                        }
+                    }, 9100);
+                }
+            });
+        }
+    */
     @Override
     public void onResume() {
         super.onResume();
