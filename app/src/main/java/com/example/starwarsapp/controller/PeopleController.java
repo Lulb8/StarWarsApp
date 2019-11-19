@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.example.starwarsapp.model.People;
-import com.example.starwarsapp.model.RestPeopleApi;
+import com.example.starwarsapp.model.RestApi;
 import com.example.starwarsapp.model.RestPeopleResponse;
-import com.example.starwarsapp.view.ListFragment;
+import com.example.starwarsapp.view.PeopleFragment;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -20,19 +20,19 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainController {
+public class PeopleController {
 
-    private ListFragment listFragment;
-    private RestPeopleApi restPeopleApi;
+    private PeopleFragment peopleFragment;
+    private RestApi restApi;
 
     private final String OBJECT = "OBJECT";
     private final String NUMBER_OBJECTS = "NUMBER_OBJECTS";
     SharedPreferences sharedPreferences;
 
-    static final String BASE_URL = "https://raw.githubusercontent.com/Lulb8/Apis/master/SWAPI/";
+    static final String BASE_URL = "https://pokeapi.co/api/v2/";
 
-    public MainController(ListFragment listFragment, SharedPreferences sharedPreferences) {
-        this.listFragment = listFragment;
+    public PeopleController(PeopleFragment peopleFragment, SharedPreferences sharedPreferences) {
+        this.peopleFragment = peopleFragment;
         this.sharedPreferences = sharedPreferences;
     }
 
@@ -46,18 +46,18 @@ public class MainController {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        restPeopleApi = retrofit.create(RestPeopleApi.class);
+        restApi = retrofit.create(RestApi.class);
 
-        if (hasDataInDataBase()) {
+        /*if (hasDataInDataBase()) {
             List<People> peopleList = getListFromDataBase();
-            listFragment.showList(peopleList);
-        } else {
+            peopleFragment.showList(peopleList);
+        } else {*/
             makeApiCall();
-        }
+        //}
     }
 
     private void makeApiCall() {
-        Call<RestPeopleResponse> call = restPeopleApi.getListPeople();
+        Call<RestPeopleResponse> call = restApi.getListPeople();
         call.enqueue(new Callback<RestPeopleResponse>() {
             @Override
             public void onResponse(Call<RestPeopleResponse> call, Response<RestPeopleResponse> response) {
@@ -65,7 +65,7 @@ public class MainController {
                 List<People> listPeople = restPeopleResponse.getResults();
                 storeData(listPeople);
 
-                listFragment.showList(listPeople);
+                peopleFragment.showList(listPeople);
             }
 
             @Override

@@ -16,7 +16,7 @@
     <string name="imageIcon">imageIcon</string>
     <string name="character_name">Character Name</string>
 
-    <string name="bottom_navigation_menu_favorites">Favorites</string>
+    <string name="bottom_navigation_menu_favorites">Films</string>
     <string name="bottom_navigation_menu_people">People</string>
     <string name="bottom_navigation_menu_search">Search</string>
     <string name="darth_vader">Darth Vader</string>

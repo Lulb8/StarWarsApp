@@ -3,13 +3,13 @@ package com.example.starwarsapp.model;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface RestPeopleApi {
+public interface RestApi {
 
-    @GET("people.json")
+    @GET("pokemon")
     Call<RestPeopleResponse> getListPeople();
-/*
-    @GET("films.json")
-    Call<RestPeopleResponse> getListFilms();
+
+    @GET("type")
+    Call<RestFilmsResponse> getListFilms();
 
     @GET("planets.json")
     Call<RestPeopleResponse> getListPlanets();
@@ -22,5 +22,5 @@ public interface RestPeopleApi {
 
     @GET("vehicles.json")
     Call<RestPeopleResponse> getListVehicles();
-*/
+
 }

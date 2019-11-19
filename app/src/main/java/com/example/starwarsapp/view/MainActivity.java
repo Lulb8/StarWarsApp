@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_home:
                             selectedFragment = new HomeFragment();
                             break;
-                        case R.id.nav_favorites:
-                            selectedFragment = new FavoritesFragment();
+                        case R.id.nav_films:
+                            selectedFragment = new FilmsFragment();
+                            break;
+                        case R.id.nav_people:
+                            selectedFragment = new PeopleFragment();
                             break;
                         case R.id.nav_search:
                             selectedFragment = new SearchFragment();
-                            break;
-                        case R.id.nav_list:
-                            selectedFragment = new ListFragment();
                             break;
                     }
 

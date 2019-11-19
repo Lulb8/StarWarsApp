@@ -9,20 +9,19 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.starwarsapp.R;
-import com.example.starwarsapp.controller.MainController;
-import com.example.starwarsapp.model.People;
+import com.example.starwarsapp.controller.FilmsController;
+import com.example.starwarsapp.model.Films;
 import com.google.gson.Gson;
 
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class ListFragment extends Fragment {
+public class FilmsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -31,37 +30,37 @@ public class ListFragment extends Fragment {
     private static final String NAME = "showTextView";
     private static final String PREFS = "PREFS";
 
-    public ListFragment() {
+    public FilmsFragment() {
     }
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_list, container, false);
+        View v = inflater.inflate(R.layout.fragment_favorites, container, false);
 
         reload();
 
         return v;
     }
 
-    public void showList(List<People> input) {
+    public void showList(List<Films> input) {
         recyclerView = getView().findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new ItemAdapter(input, getListener(), getActivity());
+        mAdapter = new FilmsAdapter(input, getListener(), getActivity());
         recyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
     }
 
-    private ItemAdapter.OnItemClickListener getListener() {
-        return new ItemAdapter.OnItemClickListener() {
+    private FilmsAdapter.OnItemClickListener getListener() {
+        return new FilmsAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(People people) {
+            public void onItemClick(Films films) {
                 Intent intent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
                 Gson gson = new Gson();
-                String json = gson.toJson(people);
+                String json = gson.toJson(films);
                 intent.putExtra(NAME, json);
                 startActivity(intent);
 
@@ -74,7 +73,7 @@ public class ListFragment extends Fragment {
     }
 
     public void reload() {
-        MainController mainController = new MainController(this, getActivity().getBaseContext().getSharedPreferences(PREFS,MODE_PRIVATE));
-        mainController.onStart();
+        FilmsController filmsController = new FilmsController(this, getActivity().getBaseContext().getSharedPreferences(PREFS, MODE_PRIVATE));
+        filmsController.onStart();
     }
 }
