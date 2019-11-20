@@ -62,7 +62,7 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.CelluleJ
         final String picture = planetsList.get(position).getPicture();
 
         holder.txtHeader.setText(name);
-        holder.txtFooter.setText("Cliimate : " + climate);
+        holder.txtFooter.setText("Climate : " + climate);
 
         /*
         Picasso.with(context)

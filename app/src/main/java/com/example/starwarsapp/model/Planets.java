@@ -1,5 +1,7 @@
 package com.example.starwarsapp.model;
 
+import java.util.ArrayList;
+
 public class Planets {
     private String name;
     private String picture;
@@ -11,8 +13,8 @@ public class Planets {
     private String terrain;
     private String surface_water;
     private String population;
-    private String residents;
-    private String films;
+    private ArrayList residents;
+    private ArrayList films;
     private String url;
 
     public String getName() {
@@ -95,19 +97,19 @@ public class Planets {
         this.population = population;
     }
 
-    public String getResidents() {
+    public ArrayList getResidents() {
         return residents;
     }
 
-    public void setResidents(String residents) {
+    public void setResidents(ArrayList residents) {
         this.residents = residents;
     }
 
-    public String getFilms() {
+    public ArrayList getFilms() {
         return films;
     }
 
-    public void setFilms(String films) {
+    public void setFilms(ArrayList films) {
         this.films = films;
     }
 

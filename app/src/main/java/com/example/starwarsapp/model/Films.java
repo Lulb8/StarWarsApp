@@ -1,5 +1,7 @@
 package com.example.starwarsapp.model;
 
+import java.util.ArrayList;
+
 public class Films {
     private String title;
     private String film_poster;
@@ -8,11 +10,11 @@ public class Films {
     private String director;
     private String producer;
     private String release_date;
-    private String characters;
-    private String planets;
-    private String starships;
-    private String vehicles;
-    private String species;
+    private ArrayList characters;
+    private ArrayList planets;
+    private ArrayList starships;
+    private ArrayList vehicles;
+    private ArrayList species;
     private String url;
 
     public String getTitle() {
@@ -71,43 +73,43 @@ public class Films {
         this.release_date = release_date;
     }
 
-    public String getCharacters() {
+    public ArrayList getCharacters() {
         return characters;
     }
 
-    public void setCharacters(String characters) {
+    public void setCharacters(ArrayList characters) {
         this.characters = characters;
     }
 
-    public String getPlanets() {
+    public ArrayList getPlanets() {
         return planets;
     }
 
-    public void setPlanets(String planets) {
+    public void setPlanets(ArrayList planets) {
         this.planets = planets;
     }
 
-    public String getStarships() {
+    public ArrayList getStarships() {
         return starships;
     }
 
-    public void setStarships(String starships) {
+    public void setStarships(ArrayList starships) {
         this.starships = starships;
     }
 
-    public String getVehicles() {
+    public ArrayList getVehicles() {
         return vehicles;
     }
 
-    public void setVehicles(String vehicles) {
+    public void setVehicles(ArrayList vehicles) {
         this.vehicles = vehicles;
     }
 
-    public String getSpecies() {
+    public ArrayList getSpecies() {
         return species;
     }
 
-    public void setSpecies(String species) {
+    public void setSpecies(ArrayList species) {
         this.species = species;
     }
 

@@ -1,5 +1,7 @@
 package com.example.starwarsapp.model;
 
+import java.util.ArrayList;
+
 public class People {
     private String name;
     private String image_icon;
@@ -12,6 +14,10 @@ public class People {
     private String birth_year;
     private String gender;
     private String homeworld;
+    private ArrayList films;
+    private ArrayList species;
+    private ArrayList vehicles;
+    private ArrayList starships;
     private String url;
 
     public String getName() {
@@ -100,6 +106,38 @@ public class People {
 
     public void setHomeworld(String homeworld) {
         this.homeworld = homeworld;
+    }
+
+    public ArrayList getFilms() {
+        return films;
+    }
+
+    public void setFilms(ArrayList films) {
+        this.films = films;
+    }
+
+    public ArrayList getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(ArrayList species) {
+        this.species = species;
+    }
+
+    public ArrayList getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(ArrayList vehicles) {
+        this.vehicles = vehicles;
+    }
+
+    public ArrayList getStarships() {
+        return starships;
+    }
+
+    public void setStarships(ArrayList starships) {
+        this.starships = starships;
     }
 
     public String getUrl() {
