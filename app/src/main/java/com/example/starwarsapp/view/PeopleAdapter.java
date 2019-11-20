@@ -15,7 +15,7 @@ import com.example.starwarsapp.model.People;
 
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
+public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJava> {
 
     private List<People> peopleList;
     private final OnItemClickListener listener;
@@ -40,7 +40,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.CelluleJava> {
         }
     }
 
-    public ItemAdapter(List<People> listValues, OnItemClickListener listener, Context context) {
+    public PeopleAdapter(List<People> listValues, OnItemClickListener listener, Context context) {
         this.peopleList = listValues;
         this.listener = listener;
         this.context = context;

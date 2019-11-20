@@ -11,8 +11,8 @@ public interface RestApi {
     @GET("type")
     Call<RestFilmsResponse> getListFilms();
 
-    @GET("planets.json")
-    Call<RestPeopleResponse> getListPlanets();
+    @GET("ability")
+    Call<RestPlanetsResponse> getListPlanets();
 
     @GET("species.json")
     Call<RestPeopleResponse> getListSpecies();

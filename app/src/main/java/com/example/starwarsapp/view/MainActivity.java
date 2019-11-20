@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_people:
                             selectedFragment = new PeopleFragment();
                             break;
-                        case R.id.nav_search:
-                            selectedFragment = new SearchFragment();
+                        case R.id.nav_planets:
+                            selectedFragment = new PlanetsFragment();
                             break;
                     }
 
