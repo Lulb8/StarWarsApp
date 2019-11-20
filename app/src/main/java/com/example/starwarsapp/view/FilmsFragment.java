@@ -37,7 +37,7 @@ public class FilmsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_favorites, container, false);
+        View v = inflater.inflate(R.layout.fragment_films, container, false);
 
         reload();
 
