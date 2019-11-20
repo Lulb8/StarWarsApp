@@ -1,5 +1,7 @@
 package com.example.starwarsapp.model;
 
+import java.util.ArrayList;
+
 public class Starships {
     private String name;
     private String picture;
@@ -15,8 +17,8 @@ public class Starships {
     private String hyperdrive_rating;
     private String MGLT;
     private String starship_class;
-    private String pilots;
-    private String films;
+    private ArrayList pilots;
+    private ArrayList films;
     private String url;
 
     public String getName() {
@@ -131,19 +133,19 @@ public class Starships {
         this.starship_class = starship_class;
     }
 
-    public String getPilots() {
+    public ArrayList getPilots() {
         return pilots;
     }
 
-    public void setPilots(String pilots) {
+    public void setPilots(ArrayList pilots) {
         this.pilots = pilots;
     }
 
-    public String getFilms() {
+    public ArrayList getFilms() {
         return films;
     }
 
-    public void setFilms(String films) {
+    public void setFilms(ArrayList films) {
         this.films = films;
     }
 

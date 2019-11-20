@@ -4,10 +4,12 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
 import com.example.starwarsapp.model.People;
 import com.google.gson.Gson;
@@ -28,6 +30,20 @@ public class Main2Activity extends AppCompatActivity {
         String json = getIntent().getStringExtra(NAME);
         Gson gson = new Gson();
         People people = gson.fromJson(json, People.class);
+
+        ImageView imageDetail = findViewById(R.id.imageDetail);
+        String image = people.getImageDetail();
+
+        /*Picasso.with(this)
+                .load(image)
+                .error(R.drawable.error_icon)
+                .into(imageView);
+        */
+        Glide.with(this)
+                .load(image)
+                .fitCenter()
+                .error(R.drawable.error_icon)
+                .into(imageDetail);
 
         TextView name = findViewById(R.id.name);
         name.setText(people.getName());

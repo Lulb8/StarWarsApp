@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_planets:
                             selectedFragment = new PlanetsFragment();
                             break;
+                        case R.id.nav_starships:
+                            selectedFragment = new StarshipsFragment();
+                            break;
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

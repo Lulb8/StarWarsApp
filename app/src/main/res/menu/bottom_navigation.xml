@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_public_black_24dp"
         android:title="Planets" />
 
+    <item
+        android:id="@+id/nav_starships"
+        android:icon="@drawable/millenium_falcon"
+        android:title="Starships" />
+
 </menu>

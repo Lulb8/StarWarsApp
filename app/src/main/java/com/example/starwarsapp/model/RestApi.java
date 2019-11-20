@@ -18,7 +18,7 @@ public interface RestApi {
     Call<RestPeopleResponse> getListSpecies();
 
     @GET("starships.json")
-    Call<RestPeopleResponse> getListStarships();
+    Call<RestStarshipsResponse> getListStarships();
 
     @GET("vehicles.json")
     Call<RestPeopleResponse> getListVehicles();
