@@ -12,10 +12,6 @@ public class People {
     private String birth_year;
     private String gender;
     private String homeworld;
-    private String films;
-    private String species;
-    private String vehicles;
-    private String starships;
     private String url;
 
     public String getName() {
@@ -104,38 +100,6 @@ public class People {
 
     public void setHomeworld(String homeworld) {
         this.homeworld = homeworld;
-    }
-
-    public String getFilms() {
-        return films;
-    }
-
-    public void setFilms(String films) {
-        this.films = films;
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
-    }
-
-    public String getVehicles() {
-        return vehicles;
-    }
-
-    public void setVehicles(String vehicles) {
-        this.vehicles = vehicles;
-    }
-
-    public String getStarships() {
-        return starships;
-    }
-
-    public void setStarships(String starships) {
-        this.starships = starships;
     }
 
     public String getUrl() {

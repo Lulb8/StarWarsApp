@@ -60,7 +60,6 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.CelluleJ
         final String name = planetsList.get(position).getName();
         final String climate = planetsList.get(position).getClimate();
         final String picture = planetsList.get(position).getPicture();
-        System.out.println("url = " + picture);
 
         holder.txtHeader.setText(name);
         holder.txtFooter.setText("Cliimate : " + climate);

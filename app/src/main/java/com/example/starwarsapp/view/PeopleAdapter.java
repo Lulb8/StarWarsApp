@@ -60,7 +60,6 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
         final String name = peopleList.get(position).getName();
         final String gender = peopleList.get(position).getGender();
         final String image_icon = peopleList.get(position).getImageIcon();
-        System.out.println("url = " + image_icon);
 
         holder.txtHeader.setText(name);
         holder.txtFooter.setText("Gender : " + gender);

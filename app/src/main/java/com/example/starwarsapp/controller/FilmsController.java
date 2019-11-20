@@ -29,7 +29,7 @@ public class FilmsController {
     private final String NUMBER_OBJECTS = "NUMBER_OBJECTS";
     SharedPreferences sharedPreferences;
 
-    static final String BASE_URL = "https://pokeapi.co/api/v2/";
+    static final String BASE_URL = "https://raw.githubusercontent.com/Lulb8/Apis/master/SWAPI/";
 
     public FilmsController(FilmsFragment filmsFragment, SharedPreferences sharedPreferences) {
         this.filmsFragment = filmsFragment;

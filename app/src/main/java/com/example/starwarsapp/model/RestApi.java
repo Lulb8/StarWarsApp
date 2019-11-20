@@ -5,13 +5,13 @@ import retrofit2.http.GET;
 
 public interface RestApi {
 
-    @GET("pokemon")
+    @GET("people.json")
     Call<RestPeopleResponse> getListPeople();
 
-    @GET("type")
+    @GET("films.json")
     Call<RestFilmsResponse> getListFilms();
 
-    @GET("ability")
+    @GET("planets.json")
     Call<RestPlanetsResponse> getListPlanets();
 
     @GET("species.json")
