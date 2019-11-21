@@ -34,7 +34,7 @@ public class PeopleFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_people, container, false);
+        View v = inflater.inflate(R.layout.recyclerview, container, false);
 
         reload();
 
