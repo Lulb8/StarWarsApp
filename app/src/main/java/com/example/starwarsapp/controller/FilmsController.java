@@ -50,7 +50,7 @@ public class FilmsController {
 
         /*if (hasDataInDataBase()) {
             List<Films> listFilms = getListFromDataBase();
-            listFragment.showList(listFilms);
+            filmsFragment.showList(listFilms);
         } else {*/
             makeApiCall();
         //}

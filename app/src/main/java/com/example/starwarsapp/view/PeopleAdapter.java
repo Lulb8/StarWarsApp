@@ -34,9 +34,9 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
 
         public CelluleJava(View view) {
             super(view);
-            txtHeader = (TextView) view.findViewById(R.id.title);
-            txtFooter = (TextView) view.findViewById(R.id.gender);
-            imgIcon = (ImageView) view.findViewById(R.id.imageIcon);
+            txtHeader = (TextView) view.findViewById(R.id.tile_title);
+            //txtFooter = (TextView) view.findViewById(R.id.gender);
+            imgIcon = (ImageView) view.findViewById(R.id.tile_picture);
         }
     }
 
@@ -62,7 +62,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
         final String image_icon = peopleList.get(position).getImageIcon();
 
         holder.txtHeader.setText(name);
-        holder.txtFooter.setText("Gender : " + gender);
+        //holder.txtFooter.setText("Gender : " + gender);
 
         /*
         Picasso.with(context)

@@ -49,8 +49,8 @@ public class StarshipsController {
         restApi = retrofit.create(RestApi.class);
 
         /*if (hasDataInDataBase()) {
-            List<People> peopleList = getListFromDataBase();
-            peopleFragment.showList(peopleList);
+            List<Starships> starshipsList = getListFromDataBase();
+            starshipsFragment.showList(starshipsList);
         } else {*/
             makeApiCall();
         //}

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,10 +24,6 @@ import java.util.List;
 import static android.content.Context.MODE_PRIVATE;
 
 public class StarshipsFragment extends Fragment {
-
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
 
     private static final String NAME = "showTextView";
     private static final String PREFS = "PREFS";
@@ -46,11 +43,11 @@ public class StarshipsFragment extends Fragment {
     }
 
     public void showList(List<Starships> input) {
-        recyclerView = getView().findViewById(R.id.my_recycler_view);
+        RecyclerView recyclerView = getView().findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new StarshipsAdapter(input, getListener(), getActivity());
+        RecyclerView.Adapter mAdapter = new StarshipsAdapter(input, getListener(), getActivity());
         recyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
     }

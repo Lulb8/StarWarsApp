@@ -34,9 +34,9 @@ public class StarshipsAdapter extends RecyclerView.Adapter<StarshipsAdapter.Cell
 
         public CelluleJava(View view) {
             super(view);
-            txtHeader = (TextView) view.findViewById(R.id.title);
-            txtFooter = (TextView) view.findViewById(R.id.gender);
-            imgIcon = (ImageView) view.findViewById(R.id.imageIcon);
+            txtHeader = (TextView) view.findViewById(R.id.tile_title);
+            //txtFooter = (TextView) view.findViewById(R.id.gender);
+            imgIcon = (ImageView) view.findViewById(R.id.tile_picture);
         }
     }
 
@@ -62,7 +62,7 @@ public class StarshipsAdapter extends RecyclerView.Adapter<StarshipsAdapter.Cell
         final String picture = starshipsList.get(position).getPicture();
 
         holder.txtHeader.setText(name);
-        holder.txtFooter.setText("Crew : " + crew);
+        //holder.txtFooter.setText("Crew : " + crew);
 
         /*
         Picasso.with(context)

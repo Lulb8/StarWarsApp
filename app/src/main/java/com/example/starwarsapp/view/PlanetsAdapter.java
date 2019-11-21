@@ -34,9 +34,9 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.CelluleJ
 
         public CelluleJava(View view) {
             super(view);
-            txtHeader = (TextView) view.findViewById(R.id.title);
-            txtFooter = (TextView) view.findViewById(R.id.gender);
-            imgIcon = (ImageView) view.findViewById(R.id.imageIcon);
+            txtHeader = (TextView) view.findViewById(R.id.tile_title);
+            //txtFooter = (TextView) view.findViewById(R.id.gender);
+            imgIcon = (ImageView) view.findViewById(R.id.tile_picture);
         }
     }
 
@@ -62,7 +62,7 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.CelluleJ
         final String picture = planetsList.get(position).getPicture();
 
         holder.txtHeader.setText(name);
-        holder.txtFooter.setText("Climate : " + climate);
+        //holder.txtFooter.setText("Climate : " + climate);
 
         /*
         Picasso.with(context)
