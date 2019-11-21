@@ -69,9 +69,6 @@ public class Main2Activity extends AppCompatActivity {
         TextView skinColor = findViewById(R.id.skin_color);
         skinColor.setText("Skin color : " + people.getSkinColor());
 
-        TextView source = findViewById(R.id.linkUrl);
-        source.setText("Source : https://swapi.co/api/people");
-
         //shakePhone();
     }
 
