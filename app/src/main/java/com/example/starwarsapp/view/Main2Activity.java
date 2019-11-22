@@ -1,10 +1,12 @@
 package com.example.starwarsapp.view;
 
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
@@ -30,12 +32,15 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String json = getIntent().getStringExtra(NAME);
         Gson gson = new Gson();
         People people = gson.fromJson(json, People.class);
 
         ImageView imageDetail = findViewById(R.id.imageDetail);
+        String image = people.getImageDetail();
+
 
         /*Picasso.with(this)
                 .load(image)
@@ -43,7 +48,7 @@ public class Main2Activity extends AppCompatActivity {
                 .into(imageView);
         */
         Glide.with(this)
-                .load(imageDetail)
+                .load(image)
                 .fitCenter()
                 .error(R.drawable.error_icon)
                 .into(imageDetail);
