@@ -52,7 +52,7 @@ public class StarshipsController {
             List<Starships> starshipsList = getListFromDataBase();
             starshipsFragment.showList(starshipsList);
         } else {*/
-            makeApiCall();
+        makeApiCall();
         //}
     }
 
@@ -79,15 +79,16 @@ public class StarshipsController {
         Gson gson = new Gson();
         String json = gson.toJson(listStarships);
         sharedPreferences
-                .edit().putString(OBJECT,json)
-                .putInt(NUMBER_OBJECTS,listStarships.size())
+                .edit().putString(OBJECT, json)
+                .putInt(NUMBER_OBJECTS, listStarships.size())
                 .apply();
     }
 
     private List<Starships> getListFromDataBase() {
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(OBJECT,null);
-        Type type = new TypeToken<List<Starships>>() {}.getType();
+        String json = sharedPreferences.getString(OBJECT, null);
+        Type type = new TypeToken<List<Starships>>() {
+        }.getType();
         return gson.fromJson(json, type);
     }
 

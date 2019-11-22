@@ -52,7 +52,7 @@ public class PeopleController {
             List<People> peopleList = getListFromDataBase();
             peopleFragment.showList(peopleList);
         } else {*/
-            makeApiCall();
+        makeApiCall();
         //}
     }
 
@@ -79,15 +79,16 @@ public class PeopleController {
         Gson gson = new Gson();
         String json = gson.toJson(listPeople);
         sharedPreferences
-                .edit().putString(OBJECT,json)
-                .putInt(NUMBER_OBJECTS,listPeople.size())
+                .edit().putString(OBJECT, json)
+                .putInt(NUMBER_OBJECTS, listPeople.size())
                 .apply();
     }
 
     private List<People> getListFromDataBase() {
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(OBJECT,null);
-        Type type = new TypeToken<List<People>>() {}.getType();
+        String json = sharedPreferences.getString(OBJECT, null);
+        Type type = new TypeToken<List<People>>() {
+        }.getType();
         return gson.fromJson(json, type);
     }
 

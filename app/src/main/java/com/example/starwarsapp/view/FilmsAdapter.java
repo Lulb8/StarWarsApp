@@ -26,16 +26,13 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.CelluleJava>
         void onItemClick(Films films);
     }
 
-
     public class CelluleJava extends RecyclerView.ViewHolder {
-        public TextView txtHeader;
-        public TextView txtFooter;
+        public TextView title;
         public ImageView imgIcon;
 
         public CelluleJava(View view) {
             super(view);
-            txtHeader = (TextView) view.findViewById(R.id.tile_title);
-            //txtFooter = (TextView) view.findViewById(R.id.gender);
+            title = (TextView) view.findViewById(R.id.tile_title);
             imgIcon = (ImageView) view.findViewById(R.id.tile_picture);
         }
     }
@@ -58,11 +55,9 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.CelluleJava>
     public void onBindViewHolder(CelluleJava holder, final int position) {
         final Films films = filmsList.get(position);
         final String title = filmsList.get(position).getTitle();
-        final String director = filmsList.get(position).getDirector();
         final String filmPoster = filmsList.get(position).getFilm_poster();
 
-        holder.txtHeader.setText(title);
-        //holder.txtFooter.setText("Director : " + director);
+        holder.title.setText(title);
 
         /*
         Picasso.with(context)
@@ -84,7 +79,6 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.CelluleJava>
                 listener.onItemClick(films);
             }
         });
-
     }
 
     @Override

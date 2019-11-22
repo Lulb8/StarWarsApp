@@ -1,23 +1,23 @@
 package com.example.starwarsapp.view;
 
-import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
 import com.example.starwarsapp.model.People;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.gson.Gson;
 
-public class Main2Activity extends AppCompatActivity {
+public class FilmsDetailsFragment extends Fragment {
 
     private static final String NAME = "showTextView";
 
@@ -25,55 +25,67 @@ public class Main2Activity extends AppCompatActivity {
     private Sensor mAccelerometer;
     //private ShakeDetector mShakeDetector;
 
+    public FilmsDetailsFragment() {
+    }
+
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_films_details, container, false);
 
+        getDetails();
 
-        String json = getIntent().getStringExtra(NAME);
+        return v;
+    }
+
+    public void getDetails() {
+        String json = getActivity().getIntent().getStringExtra(NAME);
         Gson gson = new Gson();
         People people = gson.fromJson(json, People.class);
-
-        ImageView imageDetail = findViewById(R.id.imageDetail);
-
+/*
+        ImageView imageDetail = getView().findViewById(R.id.imageDetail);
+        String image = people.getImageDetail();
+*/
         /*Picasso.with(this)
                 .load(image)
                 .error(R.drawable.error_icon)
                 .into(imageView);
         */
+        /*
         Glide.with(this)
-                .load(imageDetail)
+                .load(image)
                 .fitCenter()
                 .error(R.drawable.error_icon)
                 .into(imageDetail);
 
-        TextView name = findViewById(R.id.name);
+        TextView name = getView().findViewById(R.id.name);
         name.setText(people.getName());
 
-        TextView birthYear = findViewById(R.id.birth_year);
+        TextView birthYear = getView().findViewById(R.id.birth_year);
         birthYear.setText("Birth Year : " + people.getBirthYear());
 
-        TextView eyeColor = findViewById(R.id.eye_color);
+        TextView eyeColor = getView().findViewById(R.id.eye_color);
         eyeColor.setText("Eye color : " + people.getEyeColor());
 
-        TextView gender = findViewById(R.id.gender);
+        TextView gender = getView().findViewById(R.id.gender);
         gender.setText("Gender : " + people.getGender());
 
-        TextView hairColor = findViewById(R.id.hair_color);
+        TextView hairColor = getView().findViewById(R.id.hair_color);
         hairColor.setText("Hair color : " + people.getHairColor());
 
-        TextView height = findViewById(R.id.height);
+        TextView height = getView().findViewById(R.id.height);
         height.setText("Height : " + people.getHeight() + " cm");
 
-        TextView mass = findViewById(R.id.mass);
+        TextView mass = getView().findViewById(R.id.mass);
         mass.setText("Mass : " + people.getMass() + " kg");
 
-        TextView skinColor = findViewById(R.id.skin_color);
+        TextView skinColor = getView().findViewById(R.id.skin_color);
         skinColor.setText("Skin color : " + people.getSkinColor());
-
+*/
         //shakePhone();
     }
+
 
     /*
         public void shakePhone(){
@@ -102,6 +114,7 @@ public class Main2Activity extends AppCompatActivity {
             });
         }
     */
+
     @Override
     public void onResume() {
         super.onResume();
@@ -113,13 +126,13 @@ public class Main2Activity extends AppCompatActivity {
         //mSensorManager.unregisterListener(mShakeDetector);
         super.onPause();
     }
-
+/*
     @Override
     public void finish() {
         super.finish();
-        final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.lightsaber_previous);
+        final MediaPlayer soundPrevious = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.lightsaber_previous);
         soundPrevious.start();
 
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-    }
+        getActivity().overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }*/
 }

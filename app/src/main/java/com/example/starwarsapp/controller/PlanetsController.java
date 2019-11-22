@@ -52,7 +52,7 @@ public class PlanetsController {
             List<Planets> planetsList = getListFromDataBase();
             planetsFragment.showList(planetsList);
         } else {*/
-            makeApiCall();
+        makeApiCall();
         //}
     }
 
@@ -79,15 +79,16 @@ public class PlanetsController {
         Gson gson = new Gson();
         String json = gson.toJson(listPlanets);
         sharedPreferences
-                .edit().putString(OBJECT,json)
-                .putInt(NUMBER_OBJECTS,listPlanets.size())
+                .edit().putString(OBJECT, json)
+                .putInt(NUMBER_OBJECTS, listPlanets.size())
                 .apply();
     }
 
     private List<Planets> getListFromDataBase() {
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(OBJECT,null);
-        Type type = new TypeToken<List<Planets>>() {}.getType();
+        String json = sharedPreferences.getString(OBJECT, null);
+        Type type = new TypeToken<List<Planets>>() {
+        }.getType();
         return gson.fromJson(json, type);
     }
 

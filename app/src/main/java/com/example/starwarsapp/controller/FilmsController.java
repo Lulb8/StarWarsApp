@@ -52,7 +52,7 @@ public class FilmsController {
             List<Films> listFilms = getListFromDataBase();
             filmsFragment.showList(listFilms);
         } else {*/
-            makeApiCall();
+        makeApiCall();
         //}
     }
 
@@ -79,15 +79,16 @@ public class FilmsController {
         Gson gson = new Gson();
         String json = gson.toJson(listFilms);
         sharedPreferences
-                .edit().putString(OBJECT,json)
-                .putInt(NUMBER_OBJECTS,listFilms.size())
+                .edit().putString(OBJECT, json)
+                .putInt(NUMBER_OBJECTS, listFilms.size())
                 .apply();
     }
 
     private List<Films> getListFromDataBase() {
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(OBJECT,null);
-        Type type = new TypeToken<List<Films>>() {}.getType();
+        String json = sharedPreferences.getString(OBJECT, null);
+        Type type = new TypeToken<List<Films>>() {
+        }.getType();
         return gson.fromJson(json, type);
     }
 
