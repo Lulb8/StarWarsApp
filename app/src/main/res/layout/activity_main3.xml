@@ -79,7 +79,7 @@
 
             <TextView
                 android:id="@+id/release_date"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:background="#FFFFFF"
@@ -93,7 +93,7 @@
 
             <TextView
                 android:id="@+id/director"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="#FFFFFF"
@@ -107,7 +107,7 @@
 
             <TextView
                 android:id="@+id/producer"
-                android:layout_width="160dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="#FFFFFF"
