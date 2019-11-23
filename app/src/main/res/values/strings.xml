@@ -30,4 +30,13 @@
     <string name="planets">planets</string>
     <string name="species">species</string>
     <string name="vehicles">vehicles</string>
+    <string name="residents">residents</string>
+    <string name="population">population</string>
+    <string name="surface_water">surface_water</string>
+    <string name="terrain">terrain</string>
+    <string name="gravity">gravity</string>
+    <string name="climate">climate</string>
+    <string name="diameter">diameter</string>
+    <string name="orbital_period">orbital_period</string>
+    <string name="rotation_period">rotation_period</string>
 </resources>
