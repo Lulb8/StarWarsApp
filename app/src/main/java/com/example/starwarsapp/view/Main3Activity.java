@@ -87,47 +87,18 @@ public class Main3Activity extends AppCompatActivity {
 
         TextView characters = findViewById(R.id.characters);
         JSONArray jsonArrayCharacters = new JSONArray(films.getCharacters());
-        String listCharacters = "";
-        try {
-            listCharacters = jsonArrayCharacters.getString(0);
-            for (int i = 1; i < jsonArrayCharacters.length(); i++){
-                listCharacters = listCharacters + ", " + jsonArrayCharacters.getString(i);
-                System.out.println(jsonArrayCharacters.getString(i));
-            }
-            System.out.println(listCharacters);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        String listCharacters = loadArray(jsonArrayCharacters);
         characters.setText(listCharacters);
 
         TextView planets = findViewById(R.id.planets);
         JSONArray jsonArrayPlanets = new JSONArray(films.getPlanets());
-        String listPlanets = "";
-        try {
-            listPlanets = jsonArrayPlanets.getString(0);
-            for (int i = 1; i < jsonArrayPlanets.length(); i++){
-                listPlanets = listPlanets + ", " + jsonArrayPlanets.getString(i);
-                System.out.println(jsonArrayPlanets.getString(i));
-            }
-            System.out.println(listPlanets);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        String listPlanets = loadArray(jsonArrayPlanets);
+
         planets.setText(listPlanets);
 
         TextView starships = findViewById(R.id.starships);
         JSONArray jsonArrayStarships = new JSONArray(films.getStarships());
-        String listStarships = "";
-        try {
-            listStarships = jsonArrayStarships.getString(0);
-            for (int i = 1; i < jsonArrayStarships.length(); i++){
-                listStarships = listStarships + ", " + jsonArrayStarships.getString(i);
-                System.out.println(jsonArrayStarships.getString(i));
-            }
-            System.out.println(listStarships);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        String listStarships = loadArray(jsonArrayStarships);
         starships.setText(listStarships);
 
         //shakePhone();
@@ -160,6 +131,21 @@ public class Main3Activity extends AppCompatActivity {
             });
         }
     */
+
+    public String loadArray(JSONArray jsonArray){
+        String listItems = "";
+        try {
+            listItems = jsonArray.getString(0);
+            for (int i = 1; i < jsonArray.length(); i++){
+                listItems = listItems + ", " + jsonArray.getString(i);
+                System.out.println(jsonArray.getString(i));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return listItems;
+    }
+
     @Override
     public void onResume() {
         super.onResume();
