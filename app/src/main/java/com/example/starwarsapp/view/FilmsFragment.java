@@ -55,7 +55,7 @@ public class FilmsFragment extends Fragment {
         return new FilmsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Films films) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), Main3Activity.class);
                 Gson gson = new Gson();
                 String json = gson.toJson(films);
                 intent.putExtra(NAME, json);

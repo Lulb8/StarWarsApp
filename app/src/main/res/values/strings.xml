@@ -21,4 +21,10 @@
     <string name="bottom_navigation_menu_search">Search</string>
     <string name="darth_vader">Darth Vader</string>
     <string name="image_detail">Image Detail</string>
+    <string name="release_date">release_date</string>
+    <string name="director">director</string>
+    <string name="producer">producer</string>
+    <string name="opening_crawl">opening_crawl</string>
+    <string name="title">title</string>
+    <string name="characters">characters</string>
 </resources>
