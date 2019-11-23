@@ -6,6 +6,7 @@
 
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
+        android:hardwareAccelerated="true"
         android:required="true" />
 
     <application
@@ -15,8 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.Main3Activity"></activity>
-        <activity android:name=".view.Main2Activity" />
+        <activity android:name=".view.Main3Activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".view.Main2Activity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.SplashScreenActivity"
             android:screenOrientation="portrait"

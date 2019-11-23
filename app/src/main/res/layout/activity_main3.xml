@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#efefef"
+    android:orientation="vertical"
     tools:context=".view.Main3Activity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -62,7 +63,7 @@
                 android:layout_width="300sp"
                 android:layout_height="50sp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="8dp"
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
@@ -282,6 +283,31 @@
                 app:layout_constraintHorizontal_bias="0.871"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <WebView
+                android:id="@+id/webview_compontent"
+                android:layout_width="300dp"
+                android:layout_height="162dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/starships">
+
+            </WebView>
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/webview_compontent"
+                app:layout_constraintEnd_toStartOf="@+id/webview_compontent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/webview_compontent"
+                app:srcCompat="@drawable/ic_local_movies_black_24dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

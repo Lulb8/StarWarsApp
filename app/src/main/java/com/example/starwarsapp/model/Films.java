@@ -10,6 +10,7 @@ public class Films {
     private String director;
     private String producer;
     private String release_date;
+    private String trailer;
     private ArrayList characters;
     private ArrayList planets;
     private ArrayList starships;
@@ -71,6 +72,14 @@ public class Films {
 
     public void setRelease_date(String release_date) {
         this.release_date = release_date;
+    }
+
+    public String getTrailer() {
+        return trailer;
+    }
+
+    public void setTrailer(String trailer) {
+        this.trailer = trailer;
     }
 
     public ArrayList getCharacters() {
