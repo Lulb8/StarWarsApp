@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.starwarsapp.R;
@@ -55,7 +54,7 @@ public class PeopleFragment extends Fragment {
         return new PeopleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(People people) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), PeopleDetailsActivity.class);
                 Gson gson = new Gson();
                 String json = gson.toJson(people);
                 intent.putExtra(NAME, json);

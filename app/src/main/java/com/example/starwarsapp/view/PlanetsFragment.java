@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.starwarsapp.R;
@@ -55,7 +54,7 @@ public class PlanetsFragment extends Fragment {
         return new PlanetsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Planets planets) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), Main4Activity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), PlanetsDetailsActivity.class);
                 Gson gson = new Gson();
                 String json = gson.toJson(planets);
                 intent.putExtra(NAME, json);

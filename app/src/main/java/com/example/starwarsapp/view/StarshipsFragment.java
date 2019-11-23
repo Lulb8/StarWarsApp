@@ -10,12 +10,10 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.starwarsapp.R;
 import com.example.starwarsapp.controller.StarshipsController;
-import com.example.starwarsapp.model.People;
 import com.example.starwarsapp.model.Starships;
 import com.google.gson.Gson;
 
@@ -56,7 +54,7 @@ public class StarshipsFragment extends Fragment {
         return new StarshipsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Starships starships) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), Main5Activity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), StarshipsDetailsActivity.class);
                 Gson gson = new Gson();
                 String json = gson.toJson(starships);
                 intent.putExtra(NAME, json);

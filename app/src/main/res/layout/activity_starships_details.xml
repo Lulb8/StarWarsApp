@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#efefef"
     android:orientation="vertical"
-    tools:context=".view.Main2Activity">
+    tools:context=".view.PeopleDetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -55,8 +55,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".view.Main2Activity"
-            tools:showIn="@layout/activity_main2">
+            tools:context=".view.PeopleDetailsActivity"
+            tools:showIn="@layout/activity_people_details">
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/starship_class"
+                app:layout_constraintEnd_toStartOf="@+id/starship_class"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/starship_class"
+                app:srcCompat="@drawable/ic_list_black_24dp" />
 
             <TextView
                 android:id="@+id/name"
@@ -78,63 +88,63 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/rotation_period"
+                android:id="@+id/model"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/rotation_period"
+                android:text="@string/model"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/diameter"
+                app:layout_constraintStart_toStartOf="@+id/cost_in_credits"
                 app:layout_constraintTop_toBottomOf="@+id/name" />
 
             <TextView
-                android:id="@+id/orbital_period"
+                android:id="@+id/manufacturer"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/orbital_period"
+                android:text="@string/manufacturer"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/diameter"
-                app:layout_constraintTop_toBottomOf="@+id/rotation_period" />
+                app:layout_constraintStart_toStartOf="@+id/cost_in_credits"
+                app:layout_constraintTop_toBottomOf="@+id/model" />
 
             <TextView
-                android:id="@+id/diameter"
+                android:id="@+id/cost_in_credits"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/diameter"
+                android:text="@string/cost_in_credits"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/climate"
-                app:layout_constraintTop_toBottomOf="@+id/orbital_period" />
+                app:layout_constraintStart_toStartOf="@+id/length"
+                app:layout_constraintTop_toBottomOf="@+id/manufacturer" />
 
             <TextView
-                android:id="@+id/climate"
+                android:id="@+id/length"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/climate"
+                android:text="@string/length"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/gravity"
-                app:layout_constraintTop_toBottomOf="@+id/diameter" />
+                app:layout_constraintStart_toStartOf="@+id/max_atmosphering_speed"
+                app:layout_constraintTop_toBottomOf="@+id/cost_in_credits" />
 
             <TextView
-                android:id="@+id/gravity"
+                android:id="@+id/max_atmosphering_speed"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -142,15 +152,15 @@
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/gravity"
+                android:text="@string/max_atmosphering_speed"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/climate" />
+                app:layout_constraintTop_toBottomOf="@+id/length" />
 
             <TextView
-                android:id="@+id/terrain"
+                android:id="@+id/crew"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -158,15 +168,15 @@
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/terrain"
+                android:text="@string/crew"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gravity" />
+                app:layout_constraintTop_toBottomOf="@+id/max_atmosphering_speed" />
 
             <TextView
-                android:id="@+id/surface_water"
+                android:id="@+id/passengers"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -174,15 +184,15 @@
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/surface_water"
+                android:text="@string/passengers"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/terrain" />
+                app:layout_constraintTop_toBottomOf="@+id/crew" />
 
             <TextView
-                android:id="@+id/population"
+                android:id="@+id/cargo_capacity"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -190,16 +200,16 @@
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/population"
+                android:text="@string/cargo_capacity"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/surface_water" />
+                app:layout_constraintTop_toBottomOf="@+id/passengers" />
 
 
             <TextView
-                android:id="@+id/residents"
+                android:id="@+id/consumables"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -207,13 +217,81 @@
                 android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="@string/residents"
+                android:text="@string/consumables"
                 android:textAlignment="textStart"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/population" />
+                app:layout_constraintTop_toBottomOf="@+id/cargo_capacity" />
+
+            <TextView
+                android:id="@+id/hyperdrive_rating"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/hyperdrive_rating"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consumables" />
+
+            <TextView
+                android:id="@+id/MGLT"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/MGLT"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hyperdrive_rating" />
+
+            <TextView
+                android:id="@+id/starship_class"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/starship_class"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MGLT" />
+
+            <TextView
+                android:id="@+id/pilots"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="36dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/pilots"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/starship_class" />
 
             <TextView
                 android:id="@+id/films"
@@ -230,16 +308,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/residents" />
+                app:layout_constraintTop_toBottomOf="@+id/pilots" />
 
             <ImageView
                 android:id="@+id/imagePlanets"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:layout_constraintBottom_toTopOf="@+id/climate"
-                app:layout_constraintEnd_toEndOf="@+id/gravity"
+                app:layout_constraintBottom_toTopOf="@+id/length"
+                app:layout_constraintEnd_toEndOf="@+id/max_atmosphering_speed"
                 app:layout_constraintHorizontal_bias="0.871"
-                app:layout_constraintStart_toEndOf="@+id/orbital_period"
+                app:layout_constraintStart_toEndOf="@+id/manufacturer"
                 app:layout_constraintTop_toBottomOf="@+id/name" />
 
             <ImageView
@@ -259,80 +337,70 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/orbital_period"
-                app:layout_constraintEnd_toStartOf="@+id/orbital_period"
+                app:layout_constraintBottom_toBottomOf="@+id/manufacturer"
+                app:layout_constraintEnd_toStartOf="@+id/manufacturer"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/orbital_period"
-                app:srcCompat="@drawable/orbit" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/terrain"
-                app:layout_constraintEnd_toStartOf="@+id/terrain"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/terrain"
-                app:srcCompat="@drawable/terrain" />
+                app:layout_constraintTop_toTopOf="@+id/manufacturer"
+                app:srcCompat="@drawable/cogs" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                app:layout_constraintBottom_toBottomOf="@+id/surface_water"
-                app:layout_constraintEnd_toStartOf="@+id/surface_water"
+                app:layout_constraintBottom_toBottomOf="@+id/passengers"
+                app:layout_constraintEnd_toStartOf="@+id/passengers"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/surface_water"
-                app:srcCompat="@drawable/water_percent" />
+                app:layout_constraintTop_toTopOf="@+id/passengers"
+                app:srcCompat="@drawable/ic_people_black_24dp" />
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                app:layout_constraintBottom_toBottomOf="@+id/population"
-                app:layout_constraintEnd_toStartOf="@+id/population"
+                app:layout_constraintBottom_toBottomOf="@+id/cargo_capacity"
+                app:layout_constraintEnd_toStartOf="@+id/cargo_capacity"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/population"
-                app:srcCompat="@drawable/ic_people_black_24dp" />
+                app:layout_constraintTop_toTopOf="@+id/cargo_capacity"
+                app:srcCompat="@drawable/account_group" />
 
             <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/diameter"
-                app:layout_constraintEnd_toStartOf="@+id/diameter"
+                android:id="@+id/imageView15"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/consumables"
+                app:layout_constraintEnd_toStartOf="@+id/consumables"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/diameter"
-                app:srcCompat="@drawable/diameter" />
+                app:layout_constraintTop_toTopOf="@+id/consumables"
+                app:srcCompat="@drawable/food" />
 
             <ImageView
                 android:id="@+id/imageView6"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                app:layout_constraintBottom_toBottomOf="@+id/climate"
-                app:layout_constraintEnd_toStartOf="@+id/climate"
+                app:layout_constraintBottom_toBottomOf="@+id/length"
+                app:layout_constraintEnd_toStartOf="@+id/length"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/climate"
-                app:srcCompat="@drawable/temperature_celsius" />
+                app:layout_constraintTop_toTopOf="@+id/length"
+                app:srcCompat="@drawable/arrow_split_vertical" />
 
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                app:layout_constraintBottom_toBottomOf="@+id/gravity"
-                app:layout_constraintEnd_toStartOf="@+id/gravity"
+                app:layout_constraintBottom_toBottomOf="@+id/max_atmosphering_speed"
+                app:layout_constraintEnd_toStartOf="@+id/max_atmosphering_speed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/gravity"
-                app:srcCompat="@drawable/gravity" />
+                app:layout_constraintTop_toTopOf="@+id/max_atmosphering_speed"
+                app:srcCompat="@drawable/speedometer" />
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/residents"
-                app:layout_constraintEnd_toStartOf="@+id/residents"
+                app:layout_constraintBottom_toBottomOf="@+id/crew"
+                app:layout_constraintEnd_toStartOf="@+id/crew"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/residents"
+                app:layout_constraintTop_toTopOf="@+id/crew"
                 app:srcCompat="@drawable/account_box_multiple" />
 
             <ImageView
@@ -349,11 +417,51 @@
                 android:id="@+id/imageView13"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                app:layout_constraintBottom_toBottomOf="@+id/rotation_period"
-                app:layout_constraintEnd_toStartOf="@+id/rotation_period"
+                app:layout_constraintBottom_toBottomOf="@+id/model"
+                app:layout_constraintEnd_toStartOf="@+id/model"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/rotation_period"
-                app:srcCompat="@drawable/rotate_orbit" />
+                app:layout_constraintTop_toTopOf="@+id/model"
+                app:srcCompat="@drawable/millenium_falcon" />
+
+            <ImageView
+                android:id="@+id/imageView14"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cost_in_credits"
+                app:layout_constraintEnd_toStartOf="@+id/cost_in_credits"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cost_in_credits"
+                app:srcCompat="@drawable/cash_multiple" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/pilots"
+                app:layout_constraintEnd_toStartOf="@+id/pilots"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/pilots"
+                app:srcCompat="@drawable/steering" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/MGLT"
+                app:layout_constraintEnd_toStartOf="@+id/MGLT"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/MGLT"
+                app:srcCompat="@drawable/speed" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/hyperdrive_rating"
+                app:layout_constraintEnd_toStartOf="@+id/hyperdrive_rating"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/hyperdrive_rating"
+                app:srcCompat="@drawable/ic_rate_review_black_24dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

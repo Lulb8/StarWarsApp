@@ -1,30 +1,23 @@
 package com.example.starwarsapp.view;
 
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
-import com.example.starwarsapp.model.People;
 import com.example.starwarsapp.model.Planets;
-import com.example.starwarsapp.model.Starships;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class Main5Activity extends AppCompatActivity {
+public class PlanetsDetailsActivity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
 
@@ -35,17 +28,16 @@ public class Main5Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
+        setContentView(R.layout.activity_planets_details);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String json = getIntent().getStringExtra(NAME);
         Gson gson = new Gson();
-        Starships starships = gson.fromJson(json, Starships.class);
+        Planets planets = gson.fromJson(json, Planets.class);
 
         ImageView imageDetail = findViewById(R.id.imageDetail);
-        String imageDetail1 = starships.getPicture();
-
+        String imageDetail1 = planets.getPicture();
         /*Picasso.with(this)
                 .load(image)
                 .error(R.drawable.error_icon)
@@ -58,8 +50,7 @@ public class Main5Activity extends AppCompatActivity {
                 .into(imageDetail);
 
         ImageView imagePlanet = findViewById(R.id.imagePlanets);
-        String image = starships.getPicture();
-
+        String image = planets.getPicture();
         /*Picasso.with(this)
                 .load(imageIcon)
                 .error(R.drawable.error_icon)
@@ -72,56 +63,41 @@ public class Main5Activity extends AppCompatActivity {
                 .into(imagePlanet);
 
         TextView name = findViewById(R.id.name);
-        name.setText(starships.getName());
+        name.setText(planets.getName());
 
-        TextView model = findViewById(R.id.model);
-        model.setText("Model : " + starships.getModel());
+        TextView rotation_period = findViewById(R.id.rotation_period);
+        rotation_period.setText("Rotation Period : " + planets.getRotation_period() + " h");
 
-        TextView manufacturer = findViewById(R.id.manufacturer);
-        manufacturer.setText("Manufacturer : " + starships.getManufacturer());
+        TextView orbital_period = findViewById(R.id.orbital_period);
+        orbital_period.setText("Orbital Period : " + planets.getOrbital_period() + " days");
 
-        TextView cost_in_credits = findViewById(R.id.cost_in_credits);
-        cost_in_credits.setText("Cost in Credits : " + starships.getCost_in_credits() + " galactic credits");
+        TextView diameter = findViewById(R.id.diameter);
+        diameter.setText("Diameter : " + planets.getDiameter() + " km");
 
-        TextView length = findViewById(R.id.length);
-        length.setText("Length : " + starships.getLength() + " m");
+        TextView climate = findViewById(R.id.climate);
+        climate.setText("Climate : " + planets.getClimate());
 
-        TextView max_atmosphering_speed = findViewById(R.id.max_atmosphering_speed);
-        max_atmosphering_speed.setText("Max Atmosphering Speed : " + starships.getMax_atmosphering_speed());
+        TextView gravity = findViewById(R.id.gravity);
+        gravity.setText("Gravity : " + planets.getGravity() + " m/s²");
 
-        TextView crew = findViewById(R.id.crew);
-        crew.setText("Crew : " + starships.getCrew());
+        TextView terrain = findViewById(R.id.terrain);
+        terrain.setText("Terrain : " + planets.getTerrain());
 
-        TextView passengers = findViewById(R.id.passengers);
-        passengers.setText("Passengers : " + starships.getPassengers());
+        TextView surface_water = findViewById(R.id.surface_water);
+        surface_water.setText("Surface Water : " + planets.getSurface_water() + " %");
 
-        TextView cargo_capacity = findViewById(R.id.cargo_capacity);
-        cargo_capacity.setText("Cargo Capacity : " + starships.getCargo_capacity());
+        TextView population = findViewById(R.id.population);
+        population.setText("Population : " + planets.getPopulation());
 
-        TextView consumables = findViewById(R.id.consumables);
-        consumables.setText("MGLT : " + starships.getConsumables());
-
-        TextView hyperdrive_rating = findViewById(R.id.hyperdrive_rating);
-        hyperdrive_rating.setText("Hyperdrive Rating : " + starships.getHyperdrive_rating());
-
-        TextView MGLT = findViewById(R.id.MGLT);
-        MGLT.setText("Cargo Capacity : " + starships.getMGLT());
-
-        TextView starship_class = findViewById(R.id.starship_class);
-        starship_class.setText("Starship Class : " + starships.getStarship_class());
-
-        TextView pilots = findViewById(R.id.pilots);
-        JSONArray jsonArrayPilots = new JSONArray(starships.getPilots());
-        String listPilots = loadArray(jsonArrayPilots);
-        pilots.setText("Pilots : " + listPilots);
+        TextView residents = findViewById(R.id.residents);
+        JSONArray jsonArrayResidents = new JSONArray(planets.getResidents());
+        String listResidents = loadArray(jsonArrayResidents);
+        residents.setText("Residents : " + listResidents);
 
         TextView films = findViewById(R.id.films);
-        JSONArray jsonArrayFilms = new JSONArray(starships.getFilms());
+        JSONArray jsonArrayFilms = new JSONArray(planets.getFilms());
         String listFilms = loadArray(jsonArrayFilms);
         films.setText("Films : " + listFilms);
-
-
-
 
         //shakePhone();
     }

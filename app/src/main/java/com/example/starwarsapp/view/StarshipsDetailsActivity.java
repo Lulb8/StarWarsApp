@@ -1,28 +1,23 @@
 package com.example.starwarsapp.view;
 
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
-import com.example.starwarsapp.model.People;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.example.starwarsapp.model.Starships;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class Main2Activity extends AppCompatActivity {
+public class StarshipsDetailsActivity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
 
@@ -33,17 +28,16 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_starships_details);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String json = getIntent().getStringExtra(NAME);
         Gson gson = new Gson();
-        People people = gson.fromJson(json, People.class);
+        Starships starships = gson.fromJson(json, Starships.class);
 
         ImageView imageDetail = findViewById(R.id.imageDetail);
-        String imageDetail1 = people.getImageDetail();
-
+        String imageDetail1 = starships.getPicture();
         /*Picasso.with(this)
                 .load(image)
                 .error(R.drawable.error_icon)
@@ -55,66 +49,67 @@ public class Main2Activity extends AppCompatActivity {
                 .error(R.drawable.error_icon)
                 .into(imageDetail);
 
-        ImageView imageCharacter = findViewById(R.id.imageCharacter);
-        String imageIcon = people.getImageIcon();
-
+        ImageView imagePlanet = findViewById(R.id.imagePlanets);
+        String image = starships.getPicture();
         /*Picasso.with(this)
                 .load(imageIcon)
                 .error(R.drawable.error_icon)
                 .into(imageCharacter);
         */
         Glide.with(this)
-                .load(imageIcon)
+                .load(image)
                 .fitCenter()
                 .error(R.drawable.error_icon)
-                .into(imageCharacter);
+                .into(imagePlanet);
 
         TextView name = findViewById(R.id.name);
-        name.setText(people.getName());
+        name.setText(starships.getName());
 
-        TextView birthYear = findViewById(R.id.birth_year);
-        birthYear.setText("Birth Year : " + people.getBirthYear());
+        TextView model = findViewById(R.id.model);
+        model.setText("Model : " + starships.getModel());
 
-        TextView eyeColor = findViewById(R.id.eye_color);
-        eyeColor.setText("Eye color : " + people.getEyeColor());
+        TextView manufacturer = findViewById(R.id.manufacturer);
+        manufacturer.setText("Manufacturer : " + starships.getManufacturer());
 
-        TextView gender = findViewById(R.id.gender);
-        gender.setText("Gender : " + people.getGender());
+        TextView cost_in_credits = findViewById(R.id.cost_in_credits);
+        cost_in_credits.setText("Cost in Credits : " + starships.getCost_in_credits() + " galactic credits");
 
-        TextView hairColor = findViewById(R.id.hair_color);
-        hairColor.setText("Hair color : " + people.getHairColor());
+        TextView length = findViewById(R.id.length);
+        length.setText("Length : " + starships.getLength() + " m");
 
-        TextView height = findViewById(R.id.height);
-        height.setText("Height : " + people.getHeight() + " cm");
+        TextView max_atmosphering_speed = findViewById(R.id.max_atmosphering_speed);
+        max_atmosphering_speed.setText("Max Atmosphering Speed : " + starships.getMax_atmosphering_speed());
 
-        TextView mass = findViewById(R.id.mass);
-        mass.setText("Mass : " + people.getMass() + " kg");
+        TextView crew = findViewById(R.id.crew);
+        crew.setText("Crew : " + starships.getCrew());
 
-        TextView skinColor = findViewById(R.id.skin_color);
-        skinColor.setText("Skin color : " + people.getSkinColor());
+        TextView passengers = findViewById(R.id.passengers);
+        passengers.setText("Passengers : " + starships.getPassengers());
 
-        TextView homeworld = findViewById(R.id.homeworld);
-        homeworld.setText("Homeworld : " + people.getHomeworld());
+        TextView cargo_capacity = findViewById(R.id.cargo_capacity);
+        cargo_capacity.setText("Cargo Capacity : " + starships.getCargo_capacity());
+
+        TextView consumables = findViewById(R.id.consumables);
+        consumables.setText("MGLT : " + starships.getConsumables());
+
+        TextView hyperdrive_rating = findViewById(R.id.hyperdrive_rating);
+        hyperdrive_rating.setText("Hyperdrive Rating : " + starships.getHyperdrive_rating());
+
+        TextView MGLT = findViewById(R.id.MGLT);
+        MGLT.setText("Cargo Capacity : " + starships.getMGLT());
+
+        TextView starship_class = findViewById(R.id.starship_class);
+        starship_class.setText("Starship Class : " + starships.getStarship_class());
+
+        TextView pilots = findViewById(R.id.pilots);
+        JSONArray jsonArrayPilots = new JSONArray(starships.getPilots());
+        String listPilots = loadArray(jsonArrayPilots);
+        pilots.setText("Pilots : " + listPilots);
 
         TextView films = findViewById(R.id.films);
-        JSONArray jsonArrayFilms = new JSONArray(people.getFilms());
+        JSONArray jsonArrayFilms = new JSONArray(starships.getFilms());
         String listFilms = loadArray(jsonArrayFilms);
         films.setText("Films : " + listFilms);
-
-        TextView species = findViewById(R.id.species);
-        JSONArray jsonArraySpecies = new JSONArray(people.getSpecies());
-        String listSpecies = loadArray(jsonArraySpecies);
-        species.setText("Specie : " + listSpecies);
-
-        TextView vehicles = findViewById(R.id.vehicles);
-        JSONArray jsonArrayVehicles = new JSONArray(people.getVehicles());
-        String listVehicles = loadArray(jsonArrayVehicles);
-        vehicles.setText("Vehicles : " + listVehicles);
-
-        TextView starships = findViewById(R.id.starships);
-        JSONArray jsonArrayStarships = new JSONArray(people.getStarships());
-        String listStarships = loadArray(jsonArrayStarships);
-        starships.setText("Starships : " + listStarships);
 
         //shakePhone();
     }

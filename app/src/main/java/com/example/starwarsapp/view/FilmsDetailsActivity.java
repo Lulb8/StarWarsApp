@@ -6,10 +6,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -24,11 +22,8 @@ import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.util.ArrayList;
-
-public class Main3Activity extends AppCompatActivity {
+public class FilmsDetailsActivity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
 
@@ -39,7 +34,7 @@ public class Main3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_films_details);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -49,8 +44,6 @@ public class Main3Activity extends AppCompatActivity {
 
         ImageView film_poster = findViewById(R.id.film_poster);
         String image = films.getFilm_poster();
-
-
         /*Picasso.with(this)
                 .load(image)
                 .error(R.drawable.error_icon)
@@ -67,8 +60,6 @@ public class Main3Activity extends AppCompatActivity {
 
         ImageView poster = findViewById(R.id.poster);
         String poster1 = films.getFilm_poster();
-
-
         /*Picasso.with(this)
                 .load(poster1)
                 .error(R.drawable.error_icon)

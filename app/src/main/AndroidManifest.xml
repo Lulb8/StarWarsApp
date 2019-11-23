@@ -16,13 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.Main5Activity"></activity>
-        <activity android:name=".view.Main4Activity" />
+        <activity android:name=".view.StarshipsDetailsActivity"></activity>
+        <activity android:name=".view.PlanetsDetailsActivity" />
         <activity
-            android:name=".view.Main3Activity"
+            android:name=".view.FilmsDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.Main2Activity"
+            android:name=".view.PeopleDetailsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.SplashScreenActivity"
