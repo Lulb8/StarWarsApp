@@ -39,8 +39,7 @@ public class Main2Activity extends AppCompatActivity {
         People people = gson.fromJson(json, People.class);
 
         ImageView imageDetail = findViewById(R.id.imageDetail);
-        String image = people.getImageDetail();
-
+        String imageDetail1 = people.getImageDetail();
 
         /*Picasso.with(this)
                 .load(image)
@@ -48,10 +47,24 @@ public class Main2Activity extends AppCompatActivity {
                 .into(imageView);
         */
         Glide.with(this)
-                .load(image)
+                .load(imageDetail1)
                 .fitCenter()
                 .error(R.drawable.error_icon)
                 .into(imageDetail);
+
+        ImageView imageCharacter = findViewById(R.id.imageCharacter);
+        String imageIcon = people.getImageIcon();
+
+        /*Picasso.with(this)
+                .load(imageIcon)
+                .error(R.drawable.error_icon)
+                .into(imageCharacter);
+        */
+        Glide.with(this)
+                .load(imageIcon)
+                .fitCenter()
+                .error(R.drawable.error_icon)
+                .into(imageCharacter);
 
         TextView name = findViewById(R.id.name);
         name.setText(people.getName());
