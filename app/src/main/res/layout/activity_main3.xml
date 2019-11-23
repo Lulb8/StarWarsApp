@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_activityMain2"
+    android:background="#efefef"
     tools:context=".view.Main3Activity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -64,11 +64,11 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="8dp"
+                android:background="#FFFFFF"
                 android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="@string/title"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent_activityMain2"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -77,78 +77,118 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/director"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginEnd="8dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/director"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccent_activityMain2"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/release_date"
-                app:layout_constraintHorizontal_bias="0.636"
-                app:layout_constraintStart_toStartOf="@+id/release_date"
-                app:layout_constraintTop_toBottomOf="@+id/release_date" />
-
-            <TextView
-                android:id="@+id/producer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:background="@color/textView_background"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/producer"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccent_activityMain2"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/director"
-                app:layout_constraintStart_toStartOf="@+id/director"
-                app:layout_constraintTop_toBottomOf="@+id/director" />
-
-            <TextView
                 android:id="@+id/release_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="@string/release_date"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccent_activityMain2"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/title"
-                app:layout_constraintStart_toStartOf="@+id/title"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.235"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title" />
 
             <TextView
-                android:id="@+id/opening_crawl"
+                android:id="@+id/director"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/director"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/release_date" />
+
+            <TextView
+                android:id="@+id/producer"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/producer"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.185"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/director" />
+
+            <TextView
+                android:id="@+id/opening_crawl"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="@string/opening_crawl"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccent_activityMain2"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/producer"
-                app:layout_constraintHorizontal_bias="0.511"
-                app:layout_constraintStart_toStartOf="@+id/producer"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/producer" />
 
             <TextView
                 android:id="@+id/characters"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
                 android:gravity="center_vertical|center_horizontal"
                 android:text="@string/characters"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccent_activityMain2"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/opening_crawl"
-                app:layout_constraintStart_toStartOf="@+id/opening_crawl"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/opening_crawl" />
+
+            <TextView
+                android:id="@+id/planets"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/planets"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/characters" />
+
+            <TextView
+                android:id="@+id/starships"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/starwars"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/starships"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/planets" />
 
             <ImageView
                 android:id="@+id/darth_vader"
@@ -163,7 +203,85 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/release_date"
+                app:layout_constraintEnd_toStartOf="@+id/release_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/release_date"
+                app:srcCompat="@drawable/ic_today_black_24dp" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/characters"
+                app:layout_constraintEnd_toStartOf="@+id/characters"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/characters"
+                app:srcCompat="@drawable/ic_people_black_24dp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/planets"
+                app:layout_constraintEnd_toStartOf="@+id/planets"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/planets"
+                app:srcCompat="@drawable/ic_public_black_24dp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/starships"
+                app:layout_constraintEnd_toStartOf="@+id/starships"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/starships"
+                app:srcCompat="@drawable/millenium_falcon" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/director"
+                app:layout_constraintEnd_toStartOf="@+id/director"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/director"
+                app:srcCompat="@drawable/chair_rolling" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/producer"
+                app:layout_constraintEnd_toStartOf="@+id/producer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/producer"
+                app:srcCompat="@drawable/cash_multiple" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/opening_crawl"
+                app:layout_constraintEnd_toStartOf="@+id/opening_crawl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/opening_crawl"
+                app:srcCompat="@drawable/appsplashscreen" />
+
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="96dp"
+                android:layout_height="133dp"
+                app:layout_constraintBottom_toTopOf="@+id/opening_crawl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.871"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

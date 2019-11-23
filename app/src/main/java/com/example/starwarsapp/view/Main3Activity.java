@@ -15,6 +15,10 @@ import com.example.starwarsapp.R;
 import com.example.starwarsapp.model.Films;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class Main3Activity extends AppCompatActivity {
@@ -24,7 +28,6 @@ public class Main3Activity extends AppCompatActivity {
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     //private ShakeDetector mShakeDetector;
-    private ArrayList<String> characterslist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,26 +58,77 @@ public class Main3Activity extends AppCompatActivity {
         TextView title = findViewById(R.id.title);
         title.setText(films.getTitle());
 
+        ImageView poster = findViewById(R.id.poster);
+        String poster1 = films.getFilm_poster();
+
+
+        /*Picasso.with(this)
+                .load(poster1)
+                .error(R.drawable.error_icon)
+                .into(poster);
+        */
+        Glide.with(this)
+                .load(poster1)
+                .fitCenter()
+                .error(R.drawable.error_icon)
+                .into(poster);
+
         TextView director = findViewById(R.id.director);
-        director.setText("Director : " + films.getDirector());
+        director.setText(films.getDirector());
 
         TextView producer = findViewById(R.id.producer);
-        producer.setText("Producer : " + films.getProducer()   );
+        producer.setText(films.getProducer()   );
 
         TextView release_date = findViewById(R.id.release_date);
-        release_date.setText("Release date : " + films.getRelease_date());
+        release_date.setText(films.getRelease_date());
 
         TextView opening_crawl = findViewById(R.id.opening_crawl);
         opening_crawl.setText("Opening crawl : " + films.getOpening_crawl());
 
         TextView characters = findViewById(R.id.characters);
-        characterslist = new ArrayList<>();
-        characterslist.add(films.getCharacters().toString());
-        String printlist = "";
-        for (String name : characterslist){
-            printlist = characterslist + name;
+        JSONArray jsonArrayCharacters = new JSONArray(films.getCharacters());
+        String listCharacters = "";
+        try {
+            listCharacters = jsonArrayCharacters.getString(0);
+            for (int i = 1; i < jsonArrayCharacters.length(); i++){
+                listCharacters = listCharacters + ", " + jsonArrayCharacters.getString(i);
+                System.out.println(jsonArrayCharacters.getString(i));
+            }
+            System.out.println(listCharacters);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-        characters.setText("Characters : " + printlist);
+        characters.setText(listCharacters);
+
+        TextView planets = findViewById(R.id.planets);
+        JSONArray jsonArrayPlanets = new JSONArray(films.getPlanets());
+        String listPlanets = "";
+        try {
+            listPlanets = jsonArrayPlanets.getString(0);
+            for (int i = 1; i < jsonArrayPlanets.length(); i++){
+                listPlanets = listPlanets + ", " + jsonArrayPlanets.getString(i);
+                System.out.println(jsonArrayPlanets.getString(i));
+            }
+            System.out.println(listPlanets);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        planets.setText(listPlanets);
+
+        TextView starships = findViewById(R.id.starships);
+        JSONArray jsonArrayStarships = new JSONArray(films.getStarships());
+        String listStarships = "";
+        try {
+            listStarships = jsonArrayStarships.getString(0);
+            for (int i = 1; i < jsonArrayStarships.length(); i++){
+                listStarships = listStarships + ", " + jsonArrayStarships.getString(i);
+                System.out.println(jsonArrayStarships.getString(i));
+            }
+            System.out.println(listStarships);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        starships.setText(listStarships);
 
         //shakePhone();
     }
