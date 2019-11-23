@@ -1,9 +1,11 @@
 package com.example.starwarsapp.view;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -154,6 +156,11 @@ public class StarshipsDetailsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return listItems;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        finish();
+        return true;
     }
 
     @Override
