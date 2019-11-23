@@ -39,4 +39,17 @@
     <string name="diameter">diameter</string>
     <string name="orbital_period">orbital_period</string>
     <string name="rotation_period">rotation_period</string>
+    <string name="cargo_capacity">cargo_capacity</string>
+    <string name="consumables">consumables</string>
+    <string name="passengers">passengers</string>
+    <string name="crew">crew</string>
+    <string name="max_atmosphering_speed">max_atmosphering_speed</string>
+    <string name="length">length</string>
+    <string name="cost_in_credits">cost_in_credits</string>
+    <string name="manufacturer">manufacturer</string>
+    <string name="model">model</string>
+    <string name="hyperdrive_rating">hyperdrive_rating</string>
+    <string name="MGLT">MGLT</string>
+    <string name="starship_class">starship_class</string>
+    <string name="pilots">pilots</string>
 </resources>

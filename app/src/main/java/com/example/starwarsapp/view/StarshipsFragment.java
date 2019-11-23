@@ -56,7 +56,7 @@ public class StarshipsFragment extends Fragment {
         return new StarshipsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Starships starships) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), Main2Activity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(), Main5Activity.class);
                 Gson gson = new Gson();
                 String json = gson.toJson(starships);
                 intent.putExtra(NAME, json);
