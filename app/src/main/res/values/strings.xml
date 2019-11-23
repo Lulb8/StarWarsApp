@@ -28,4 +28,6 @@
     <string name="title">title</string>
     <string name="characters">characters</string>
     <string name="planets">planets</string>
+    <string name="species">species</string>
+    <string name="vehicles">vehicles</string>
 </resources>

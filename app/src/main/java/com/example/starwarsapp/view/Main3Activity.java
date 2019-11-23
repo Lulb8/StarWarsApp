@@ -100,7 +100,6 @@ public class Main3Activity extends AppCompatActivity {
         TextView planets = findViewById(R.id.planets);
         JSONArray jsonArrayPlanets = new JSONArray(films.getPlanets());
         String listPlanets = loadArray(jsonArrayPlanets);
-
         planets.setText(listPlanets);
 
         TextView starships = findViewById(R.id.starships);

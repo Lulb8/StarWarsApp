@@ -19,6 +19,9 @@ import com.example.starwarsapp.model.People;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 public class Main2Activity extends AppCompatActivity {
 
     private static final String NAME = "showTextView";
@@ -90,6 +93,29 @@ public class Main2Activity extends AppCompatActivity {
         TextView skinColor = findViewById(R.id.skin_color);
         skinColor.setText("Skin color : " + people.getSkinColor());
 
+        TextView homeworld = findViewById(R.id.homeworld);
+        homeworld.setText("Homeworld : " + people.getHomeworld());
+
+        TextView films = findViewById(R.id.films);
+        JSONArray jsonArrayFilms = new JSONArray(people.getFilms());
+        String listFilms = loadArray(jsonArrayFilms);
+        films.setText("Films : " + listFilms);
+
+        TextView species = findViewById(R.id.species);
+        JSONArray jsonArraySpecies = new JSONArray(people.getSpecies());
+        String listSpecies = loadArray(jsonArraySpecies);
+        species.setText("Specie : " + listSpecies);
+
+        TextView vehicles = findViewById(R.id.vehicles);
+        JSONArray jsonArrayVehicles = new JSONArray(people.getVehicles());
+        String listVehicles = loadArray(jsonArrayVehicles);
+        vehicles.setText("Vehicles : " + listVehicles);
+
+        TextView starships = findViewById(R.id.starships);
+        JSONArray jsonArrayStarships = new JSONArray(people.getStarships());
+        String listStarships = loadArray(jsonArrayStarships);
+        starships.setText("Starships : " + listStarships);
+
         //shakePhone();
     }
 
@@ -120,6 +146,21 @@ public class Main2Activity extends AppCompatActivity {
             });
         }
     */
+
+    public String loadArray(JSONArray jsonArray){
+        String listItems = "";
+        try {
+            listItems = jsonArray.getString(0);
+            for (int i = 1; i < jsonArray.length(); i++){
+                listItems = listItems + ", " + jsonArray.getString(i);
+                System.out.println(jsonArray.getString(i));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return listItems;
+    }
+
     @Override
     public void onResume() {
         super.onResume();
