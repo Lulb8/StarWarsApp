@@ -26,17 +26,14 @@ public class StarshipsAdapter extends RecyclerView.Adapter<StarshipsAdapter.Cell
         void onItemClick(Starships starships);
     }
 
-
     public class CelluleJava extends RecyclerView.ViewHolder {
-        public TextView txtHeader;
-        public TextView txtFooter;
+        public TextView name;
         public ImageView imgIcon;
 
         public CelluleJava(View view) {
             super(view);
-            txtHeader = (TextView) view.findViewById(R.id.tile_title);
-            //txtFooter = (TextView) view.findViewById(R.id.gender);
-            imgIcon = (ImageView) view.findViewById(R.id.tile_picture);
+            name = view.findViewById(R.id.tile_title);
+            imgIcon = view.findViewById(R.id.tile_picture);
         }
     }
 
@@ -58,11 +55,9 @@ public class StarshipsAdapter extends RecyclerView.Adapter<StarshipsAdapter.Cell
     public void onBindViewHolder(CelluleJava holder, final int position) {
         final Starships starships = starshipsList.get(position);
         final String name = starshipsList.get(position).getName();
-        final String crew = starshipsList.get(position).getCrew();
         final String picture = starshipsList.get(position).getPicture();
 
-        holder.txtHeader.setText(name);
-        //holder.txtFooter.setText("Crew : " + crew);
+        holder.name.setText(name);
 
         /*
         Picasso.with(context)

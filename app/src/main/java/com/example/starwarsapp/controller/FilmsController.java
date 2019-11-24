@@ -48,12 +48,12 @@ public class FilmsController {
 
         restApi = retrofit.create(RestApi.class);
 
-        /*if (hasDataInDataBase()) {
+        if (hasDataInDataBase()) {
             List<Films> listFilms = getListFromDataBase();
             filmsFragment.showList(listFilms);
-        } else {*/
+        } else {
         makeApiCall();
-        //}
+        }
     }
 
     private void makeApiCall() {
