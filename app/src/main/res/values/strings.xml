@@ -52,4 +52,6 @@
     <string name="MGLT">MGLT</string>
     <string name="starship_class">starship_class</string>
     <string name="pilots">pilots</string>
+    <string name="action_camera">action_camera</string>
+    <string name="action_settings">action_settings</string>
 </resources>
