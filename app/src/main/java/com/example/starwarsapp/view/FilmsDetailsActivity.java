@@ -1,11 +1,13 @@
 package com.example.starwarsapp.view;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -18,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
+import com.example.starwarsapp.controller.ShakeDetector;
 import com.example.starwarsapp.model.Films;
 import com.google.gson.Gson;
 
@@ -30,7 +33,7 @@ public class FilmsDetailsActivity extends AppCompatActivity {
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
-    //private ShakeDetector mShakeDetector;
+    private ShakeDetector mShakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,10 +108,9 @@ public class FilmsDetailsActivity extends AppCompatActivity {
         String playVideo= "<iframe src=\"" + films.getTrailer() + "\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
         trailer.loadData(playVideo, "text/html", "utf-8");
 
-        //shakePhone();
+        shakePhone();
     }
 
-    /*
         public void shakePhone(){
             // ShakeDetector initialization
             mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -119,22 +121,21 @@ public class FilmsDetailsActivity extends AppCompatActivity {
 
                 @Override
                 public void onShake(int count) {
-                    final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.imperial_march);
+                    final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.star_wars_music_theme);
                     soundPrevious.start();
 
-                    final ImageView darth_vader = findViewById(R.id.darth_vader);
-                    darth_vader.animate().alpha(1f).setDuration(600);
-                    darth_vader.setImageDrawable(getResources().getDrawable(R.drawable.darth_vader_icon));
+                    final ImageView lightsaber = findViewById(R.id.lightsaber);
+                    lightsaber.animate().alpha(1f).setDuration(600);
+                    lightsaber.setImageDrawable(getResources().getDrawable(R.drawable.lightsaber));
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            darth_vader.animate().alpha(0f).setDuration(600);
+                            lightsaber.animate().alpha(0f).setDuration(600);
                         }
                     }, 9100);
                 }
             });
         }
-    */
 
     public String loadArray(JSONArray jsonArray){
         String listItems = "";
@@ -202,12 +203,12 @@ public class FilmsDetailsActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        //mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     public void onPause() {
-        //mSensorManager.unregisterListener(mShakeDetector);
+        mSensorManager.unregisterListener(mShakeDetector);
         super.onPause();
     }
 

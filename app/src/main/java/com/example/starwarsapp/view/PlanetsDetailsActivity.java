@@ -1,9 +1,11 @@
 package com.example.starwarsapp.view;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
+import com.example.starwarsapp.controller.ShakeDetector;
 import com.example.starwarsapp.model.Planets;
 import com.google.gson.Gson;
 
@@ -24,7 +27,7 @@ public class PlanetsDetailsActivity extends AppCompatActivity {
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
-    //private ShakeDetector mShakeDetector;
+    private ShakeDetector mShakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,10 +103,9 @@ public class PlanetsDetailsActivity extends AppCompatActivity {
         String listFilms = loadArray(jsonArrayFilms);
         films.setText("Films : " + listFilms);
 
-        //shakePhone();
+        shakePhone();
     }
 
-    /*
         public void shakePhone(){
             // ShakeDetector initialization
             mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -114,22 +116,21 @@ public class PlanetsDetailsActivity extends AppCompatActivity {
 
                 @Override
                 public void onShake(int count) {
-                    final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.imperial_march);
+                    final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.planet_theme);
                     soundPrevious.start();
 
-                    final ImageView darth_vader = findViewById(R.id.darth_vader);
-                    darth_vader.animate().alpha(1f).setDuration(600);
-                    darth_vader.setImageDrawable(getResources().getDrawable(R.drawable.darth_vader_icon));
+                    final ImageView planets = findViewById(R.id.planets);
+                    planets.animate().alpha(1f).setDuration(600);
+                    planets.setImageDrawable(getResources().getDrawable(R.drawable.planets));
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            darth_vader.animate().alpha(0f).setDuration(600);
+                            planets.animate().alpha(0f).setDuration(600);
                         }
-                    }, 9100);
+                    }, 12800);
                 }
             });
         }
-    */
 
     public String loadArray(JSONArray jsonArray){
         String listItems = "";
@@ -153,12 +154,12 @@ public class PlanetsDetailsActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        //mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     public void onPause() {
-        //mSensorManager.unregisterListener(mShakeDetector);
+        mSensorManager.unregisterListener(mShakeDetector);
         super.onPause();
     }
 

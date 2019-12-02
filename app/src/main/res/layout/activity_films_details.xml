@@ -184,7 +184,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/planets" />
 
             <ImageView
-                android:id="@+id/darth_vader"
+                android:id="@+id/lightsaber"
                 android:layout_width="300sp"
                 android:layout_height="300sp"
                 android:layout_marginStart="8dp"

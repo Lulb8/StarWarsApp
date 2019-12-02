@@ -1,9 +1,11 @@
 package com.example.starwarsapp.view;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
+import com.example.starwarsapp.controller.ShakeDetector;
 import com.example.starwarsapp.model.People;
 import com.google.gson.Gson;
 
@@ -24,7 +27,7 @@ public class PeopleDetailsActivity extends AppCompatActivity {
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
-    //private ShakeDetector mShakeDetector;
+    private ShakeDetector mShakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,10 +113,9 @@ public class PeopleDetailsActivity extends AppCompatActivity {
         String listStarships = loadArray(jsonArrayStarships);
         starships.setText("Starships : " + listStarships);
 
-        //shakePhone();
+        shakePhone();
     }
 
-    /*
         public void shakePhone(){
             // ShakeDetector initialization
             mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -139,7 +141,6 @@ public class PeopleDetailsActivity extends AppCompatActivity {
                 }
             });
         }
-    */
 
     public String loadArray(JSONArray jsonArray){
         String listItems = "";
@@ -163,12 +164,12 @@ public class PeopleDetailsActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        //mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     public void onPause() {
-        //mSensorManager.unregisterListener(mShakeDetector);
+        mSensorManager.unregisterListener(mShakeDetector);
         super.onPause();
     }
 

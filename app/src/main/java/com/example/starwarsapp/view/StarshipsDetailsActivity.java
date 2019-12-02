@@ -1,10 +1,12 @@
 package com.example.starwarsapp.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.starwarsapp.R;
+import com.example.starwarsapp.controller.ShakeDetector;
 import com.example.starwarsapp.model.Starships;
 import com.google.gson.Gson;
 
@@ -25,7 +28,7 @@ public class StarshipsDetailsActivity extends AppCompatActivity {
 
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
-    //private ShakeDetector mShakeDetector;
+    private ShakeDetector mShakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,10 +116,9 @@ public class StarshipsDetailsActivity extends AppCompatActivity {
         String listFilms = loadArray(jsonArrayFilms);
         films.setText("Films : " + listFilms);
 
-        //shakePhone();
+        shakePhone();
     }
 
-    /*
         public void shakePhone(){
             // ShakeDetector initialization
             mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -130,19 +132,18 @@ public class StarshipsDetailsActivity extends AppCompatActivity {
                     final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.imperial_march);
                     soundPrevious.start();
 
-                    final ImageView darth_vader = findViewById(R.id.darth_vader);
-                    darth_vader.animate().alpha(1f).setDuration(600);
-                    darth_vader.setImageDrawable(getResources().getDrawable(R.drawable.darth_vader_icon));
+                    final ImageView death_star = findViewById(R.id.death_star);
+                    death_star.animate().alpha(1f).setDuration(600);
+                    death_star.setImageDrawable(getResources().getDrawable(R.drawable.death_star));
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            darth_vader.animate().alpha(0f).setDuration(600);
+                            death_star.animate().alpha(0f).setDuration(600);
                         }
                     }, 9100);
                 }
             });
         }
-    */
 
     public String loadArray(JSONArray jsonArray){
         String listItems = "";
@@ -166,12 +167,12 @@ public class StarshipsDetailsActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        //mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     public void onPause() {
-        //mSensorManager.unregisterListener(mShakeDetector);
+        mSensorManager.unregisterListener(mShakeDetector);
         super.onPause();
     }
 
