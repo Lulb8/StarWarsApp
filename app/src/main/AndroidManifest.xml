@@ -18,8 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.StarshipsDetailsActivity"></activity>
-        <activity android:name=".view.PlanetsDetailsActivity" />
+        <activity
+            android:name=".view.StarshipsDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.PlanetsDetailsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.FilmsDetailsActivity"
             android:screenOrientation="portrait" />
@@ -39,11 +43,12 @@
         <activity
             android:name=".view.MainActivity"
             android:screenOrientation="portrait" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.starwarsapp.fileprovider"
             android:exported="false"
-            android:grantUriPermissions="true" >
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
