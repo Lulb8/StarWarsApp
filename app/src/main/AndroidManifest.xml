@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".view.InfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".view.StarshipsDetailsActivity"
             android:screenOrientation="portrait" />
         <activity

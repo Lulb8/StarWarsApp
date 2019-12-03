@@ -54,4 +54,8 @@
     <string name="pilots">pilots</string>
     <string name="action_camera">action_camera</string>
     <string name="action_settings">action_settings</string>
+    <string name="description">description</string>
+    <string name="author">author</string>
+    <string name="hint">hint</string>
+    <string name="action_infos">action_infos</string>
 </resources>
