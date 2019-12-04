@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 28
@@ -29,7 +30,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 
-    implementation 'com.google.firebase:firebase-messaging:20.0.1'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
@@ -38,20 +38,16 @@ dependencies {
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.android.support:gridlayout-v7:28.0.0'
 
-    implementation('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
-        transitive = true
-    }
-
     def coordinatorlayout_version = "1.0.0"
     implementation "androidx.coordinatorlayout:coordinatorlayout:$coordinatorlayout_version"
 
-
+    implementation 'com.google.firebase:firebase-messaging:20.0.1'
     implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-analytics:17.2.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
     implementation "com.squareup.picasso:picasso:2.5.0"
-
     implementation 'com.github.bumptech.glide:glide:4.9.0'
-    // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
     implementation 'com.android.support:design:28.0.0'
@@ -64,3 +60,5 @@ dependencies {
         force = true;
     }
 }
+
+apply plugin: 'com.google.gms.google-services'
