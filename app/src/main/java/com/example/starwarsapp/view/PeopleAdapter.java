@@ -26,17 +26,14 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
         void onItemClick(People people);
     }
 
-
     public class CelluleJava extends RecyclerView.ViewHolder {
-        public TextView txtHeader;
-        public TextView txtFooter;
+        public TextView name;
         public ImageView imgIcon;
 
         public CelluleJava(View view) {
             super(view);
-            txtHeader = (TextView) view.findViewById(R.id.tile_title);
-            //txtFooter = (TextView) view.findViewById(R.id.gender);
-            imgIcon = (ImageView) view.findViewById(R.id.tile_picture);
+            name = view.findViewById(R.id.tile_title);
+            imgIcon = view.findViewById(R.id.tile_picture);
         }
     }
 
@@ -58,11 +55,9 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
     public void onBindViewHolder(CelluleJava holder, final int position) {
         final People people = peopleList.get(position);
         final String name = peopleList.get(position).getName();
-        final String gender = peopleList.get(position).getGender();
         final String image_icon = peopleList.get(position).getImageIcon();
 
-        holder.txtHeader.setText(name);
-        //holder.txtFooter.setText("Gender : " + gender);
+        holder.name.setText(name);
 
         /*
         Picasso.with(context)
@@ -76,7 +71,6 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.CelluleJav
                 .error(R.drawable.error_icon)
                 .fitCenter()
                 .into(holder.imgIcon);
-
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

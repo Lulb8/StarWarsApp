@@ -24,7 +24,6 @@ import com.example.starwarsapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
-import java.io.FilePermission;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String NAME = "showTextView";
     private static final String PREFS = "PREFS";
 
-    // Define the pic id
-    private static final int pic_id = 123;
     String pathToFile;
 
     @Override

@@ -26,17 +26,14 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.CelluleJ
         void onItemClick(Planets planets);
     }
 
-
     public class CelluleJava extends RecyclerView.ViewHolder {
-        public TextView txtHeader;
-        public TextView txtFooter;
+        public TextView name;
         public ImageView imgIcon;
 
         public CelluleJava(View view) {
             super(view);
-            txtHeader = (TextView) view.findViewById(R.id.tile_title);
-            //txtFooter = (TextView) view.findViewById(R.id.gender);
-            imgIcon = (ImageView) view.findViewById(R.id.tile_picture);
+            name = view.findViewById(R.id.tile_title);
+            imgIcon = view.findViewById(R.id.tile_picture);
         }
     }
 
@@ -58,11 +55,9 @@ public class PlanetsAdapter extends RecyclerView.Adapter<PlanetsAdapter.CelluleJ
     public void onBindViewHolder(CelluleJava holder, final int position) {
         final Planets planets = planetsList.get(position);
         final String name = planetsList.get(position).getName();
-        final String climate = planetsList.get(position).getClimate();
         final String picture = planetsList.get(position).getPicture();
 
-        holder.txtHeader.setText(name);
-        //holder.txtFooter.setText("Climate : " + climate);
+        holder.name.setText(name);
 
         /*
         Picasso.with(context)
