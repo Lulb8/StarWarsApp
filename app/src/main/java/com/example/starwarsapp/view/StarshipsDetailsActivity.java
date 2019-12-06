@@ -129,7 +129,7 @@ public class StarshipsDetailsActivity extends AppCompatActivity {
 
                 @Override
                 public void onShake(int count) {
-                    final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.imperial_march);
+                    final MediaPlayer soundPrevious = MediaPlayer.create(getApplicationContext(), R.raw.death_star_theme);
                     soundPrevious.start();
 
                     final ImageView death_star = findViewById(R.id.death_star);
@@ -140,7 +140,7 @@ public class StarshipsDetailsActivity extends AppCompatActivity {
                         public void run() {
                             death_star.animate().alpha(0f).setDuration(600);
                         }
-                    }, 9100);
+                    }, 12000);
                 }
             });
         }
