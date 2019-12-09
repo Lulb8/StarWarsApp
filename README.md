@@ -20,7 +20,7 @@ Les données proviennent de l'API [SWAPI](https://swapi.co/).
 - Stockage des données en cache
 
 - Fonctions supplémentaires :
-  - Ajout d'une icône
+  - Ajout d'une icône <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/icon.jpg" width="50" />
   - Splash screen au lancement de l'application
   - Ajout d'une camera et de l'enregistrement des photos dans le stockage interne du téléphone
   - Ajout de bruitages de sabres lazers entre les écrans
@@ -39,55 +39,86 @@ Les données proviennent de l'API [SWAPI](https://swapi.co/).
     - People
     - Planets
     - Spaceships
+    <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/bottom.jpg" width="250" />
 
 ### Premier écran
 - Splash Screen affichant le logo de Star Wars
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/splashscreen.jpg" width="250" />
 
 ### Page d'accueil
 - Page d'accueil de l'application expliquant les différentes fonctionnalités de l'application
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/home.jpg" width="250" />
 
 ### Ecrans des listes
-- Affiche la liste des films
-- Affiche la liste des personnages
-- Affiche la liste des planètes
-- Affiche la liste des vaisseaux spatiaux
+#### Affiche la liste des films
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/films.jpg" width="250" />
+
+#### Affiche la liste des personnages
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/people.jpg" width="250" />
+
+#### Affiche la liste des planètes
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/planets.jpg" width="250" />
+
+#### Affiche la liste des vaisseaux spatiaux
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/starships.jpg" width="250" />
+
+### Ecrans des détails
 
 Collapsing toolbar avec la photo des différents items.
 
-### Ecran du détail du film
+#### Ecran du détail du film
 - Affiche les différentes informations sur le film
-- Webview Youtube avec la bande annonce
+- Webview Youtube avec la bande annonce (possibilité de mettre la vidéo en plein écran)
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/details_films.jpg" width="250" />
 
-### Ecran du détail du personnage
+#### Ecran du détail du personnage
 - Affiche les différentes informations sur le personnage
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/details_people.jpg" width="250" />
 
-### Ecran du détail de la planète
+#### Ecran du détail de la planète
 - Affiche les différentes informations sur la planète
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/details_planets.jpg" width="250" />
 
-### Ecran du détail du vaisseau spatial
+#### Ecran du détail du vaisseau spatial
 - Affiche les différentes informations sur le vaisseau spatial
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/details_starships.jpg" width="250" />
 
 ### Caméra
+- Possibilité de prendre une photo à l'intérieur de l'application
+- Enregistement de la photo dans le stockage interne du téléphone
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/camera.jpg" width="250" />
 
 ### Informations
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/credits.jpg" width="250" />
 
+## Firebase
 ### Notifications
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/notifications.png" width="250" />
 
 ### Crashlytics
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/firebase.PNG" width="250" />
+
+## Test Lab
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/robot.png" width="250" />
+
 
 ### Quand le téléphone est secoué dans les pages de détails
 - Sur la page film : 
     - Affiche des sabres lasers
     - Lance le générique des films Star Wars
+    <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/shake_films.jpg" width="250" />
     
 - Sur la page personnage : 
     - Affiche le masque de Dark Vador
     - Lance la musique de la Marche Impériale
+    <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/shake_people.jpg" width="250" />
     
 - Sur la page planète : 
     - Affiche l'image de Tatooine
     - Lance la musique "Across the Stars"
+    <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/shake_planets.jpg" width="250" />
     
-- Sur la page planète : 
+- Sur la page vaisseaux spatiaux : 
     - Affiche l'image de l'étoile noire
     - Lance la musique de la Marche Impériale
+    <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/shake_starships.jpg" width="250" />
