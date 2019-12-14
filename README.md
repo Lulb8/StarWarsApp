@@ -1,6 +1,6 @@
 # Application Star Wars
 ## Présentation
-Cette application affiche la liste et le détail des personnages de Star Wars. Elle utilise l'API SWAPI.
+Cette application affiche la liste et le détail des films, des personnages, des planètes et des vaisseaux spatiaux de Star Wars. Elle utilise l'API SWAPI.
 Les données proviennent de l'API [SWAPI](https://swapi.co/).
 
 ## Prérequis
