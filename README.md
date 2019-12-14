@@ -9,11 +9,12 @@ Les données proviennent de l'API [SWAPI](https://swapi.co/).
 
 ## Consignes respectées :
 
-- Deux écrans : Un écran avec une liste et un écran avec un détail de l’item
+- 11 écrans : 4 écrans avec des listes, 4 écrans avec le détail de l’item, 2 écrans d'informations, 1 écran splashscreen
 - Fragments
 - Bottom navigation bar
 - Material design
 - Architecture MVC
+- Gif flow
 - Affichage d'une liste dans une RecyclerView
 - Affichage du détail d'un personnage de la liste
 - Appel WebService à une API Rest : https://swapi.co/
@@ -25,9 +26,11 @@ Les données proviennent de l'API [SWAPI](https://swapi.co/).
   - Ajout d'une camera et de l'enregistrement des photos dans le stockage interne du téléphone
   - Ajout de bruitages de sabres lazers entre les écrans
   - Ajout d'animations pour faire la transition entre les écrans
+  - Ajout de collapsing toolbar
   - Ajout des notifications Push
   - Ajout de Crashlytics
   - Affichage d'une image et lancement d'une musique si le téléphone est secoué
+  - Lecture de vidéos Youtube dans l'application
 
 
 ## Fonctionnalités:
