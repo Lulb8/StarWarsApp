@@ -16,7 +16,7 @@ Les données proviennent de l'API [SWAPI](https://swapi.co/).
 - Architecture MVC
 - Gif flow
 - Affichage d'une liste dans une RecyclerView
-- Affichage du détail d'un personnage de la liste
+- Affichage du détail d'un film, personnage, planète, vaisseau spatial de la liste
 - Appel WebService à une API Rest : https://swapi.co/
 - Stockage des données en cache
 
@@ -99,10 +99,10 @@ Collapsing toolbar avec la photo des différents items.
 <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/notifications.png" width="250" />
 
 ### Crashlytics
-<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/firebase.PNG" width="250" />
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/firebase.PNG" width="500" />
 
 ## Test Lab
-<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/robot.png" width="250" />
+<img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/robot.png" width="500" />
 
 
 ### Quand le téléphone est secoué dans les pages de détails
