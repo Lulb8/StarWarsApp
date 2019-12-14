@@ -1,7 +1,6 @@
 # Application Star Wars
 ## Présentation
-Cette application affiche la liste et le détail des films, des personnages, des planètes et des vaisseaux spatiaux de Star Wars. Elle utilise l'API SWAPI.
-Les données proviennent de l'API [SWAPI](https://swapi.co/).
+Cette application affiche la liste et le détail des films, des personnages, des planètes et des vaisseaux spatiaux de Star Wars. Les données proviennent de l'API [SWAPI](https://swapi.co/).
 
 ## Prérequis
 - Installation d'Android Studio
@@ -14,7 +13,7 @@ Les données proviennent de l'API [SWAPI](https://swapi.co/).
 - Bottom navigation bar
 - Material design
 - Architecture MVC
-- Gif flow
+- Gitflow
 - Affichage d'une liste dans une RecyclerView
 - Affichage du détail d'un film, personnage, planète, vaisseau spatial de la liste
 - Appel WebService à une API Rest : https://swapi.co/
@@ -101,11 +100,11 @@ Collapsing toolbar avec la photo des différents items.
 ### Crashlytics
 <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/firebase.PNG" width="500" />
 
-## Test Lab
+### Test Lab
 <img src="https://github.com/Lulb8/StarWarsApp/blob/master/Screenshots/robot.png" width="500" />
 
 
-### Quand le téléphone est secoué dans les pages de détails
+## Quand le téléphone est secoué dans les pages de détails
 - Sur la page film : 
     - Affiche des sabres lasers
     - Lance le générique des films Star Wars
